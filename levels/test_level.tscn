@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://mkxv4v137fon"]
+
+[ext_resource type="PackedScene" uid="uid://chxbl7gg23jt2" path="res://levels/player.tscn" id="1_yco8c"]
+[ext_resource type="Texture2D" uid="uid://c7exsyr82l6ps" path="res://resources/placeholder.png" id="2_sewel"]
+
+[node name="test-level" type="Node2D"]
+metadata/_edit_vertical_guides_ = [-86.0]
+
+[node name="Player" parent="." instance=ExtResource("1_yco8c")]
+position = Vector2(500, 250)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(236, 180)
+texture = ExtResource("2_sewel")
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(172, 91)
+texture = ExtResource("2_sewel")
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D/Sprite2D"]
+position = Vector2(172, 91)
+texture = ExtResource("2_sewel")
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D/Sprite2D/Sprite2D"]
+position = Vector2(172, 91)
+texture = ExtResource("2_sewel")
