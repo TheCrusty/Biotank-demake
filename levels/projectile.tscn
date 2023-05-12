@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://bxgw46pxsh44s"]
+
+[ext_resource type="Texture2D" uid="uid://cawywum0pw1md" path="res://resources/Lemon.png" id="1_exf54"]
+[ext_resource type="Script" path="res://levels/projectile.gd" id="1_i74gw"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cs0t2"]
+
+[node name="Projectile" type="Area2D"]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_i74gw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_cs0t2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_exf54")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
