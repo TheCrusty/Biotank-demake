@@ -14,5 +14,5 @@ func get_input():
 
 func _physics_process(delta):
 	get_input()
-	$Sprite2D.look_at(get_global_mouse_position())
+	look_at(get_global_mouse_position())
 	move_and_slide()
