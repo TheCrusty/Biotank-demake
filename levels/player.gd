@@ -4,9 +4,10 @@ var projectile = preload("res://levels/projectile.tscn")
 @export var speed = 400
 
 func get_input():
-	if Input.is_action_pressed("Shoot"):
+	if Input.is_action_just_pressed("Shoot"):
 		var projectile_instance = projectile.instantiate()
-		add_child(projectile_instance)
+		owner.add_child(projectile_instance)
+		projectile_instance.transform = global_transform
 	else:
 		var input_direction = Input.get_vector("Rotate_Left", "Rotate_Right", "Forward", "Reverse")
 		velocity = input_direction * speed

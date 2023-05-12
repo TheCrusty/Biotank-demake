@@ -9,8 +9,6 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	position += transform.x * speed * delta
-	
-
 
 
 func _on_area_entered(area):
