@@ -1,5 +1,5 @@
 extends Area2D
-var speed = 100
+var speed = 420
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -12,5 +12,6 @@ func _process(delta):
 
 
 func _on_area_entered(area):
-	print("hit")
-	queue_free()
+	if area.get_parent().has_method("takeDamage"):
+		area.get_parent().takeDamage(1)
+		queue_free()
