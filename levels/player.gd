@@ -7,12 +7,12 @@ func get_input():
 	if Input.is_action_just_pressed("Shoot"):
 		var projectile_instance = projectile.instantiate()
 		owner.add_child(projectile_instance)
-		projectile_instance.transform = global_transform
+		projectile_instance.transform = $TankTopPivot.global_transform
 	else:
 		var input_direction = Input.get_vector("Rotate_Left", "Rotate_Right", "Forward", "Reverse")
 		velocity = input_direction * speed
 
 func _physics_process(delta):
 	get_input()
-	look_at(get_global_mouse_position())
+	$TankTopPivot.look_at(get_global_mouse_position())
 	move_and_slide()

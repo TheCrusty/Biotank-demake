@@ -6,4 +6,3 @@ func takeDamage(amountDamage):
 	health = health - amountDamage
 	if health <= 0:
 		queue_free()
-		

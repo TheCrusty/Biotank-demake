@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://chxbl7gg23jt2"]
+[gd_scene load_steps=5 format=3 uid="uid://chxbl7gg23jt2"]
 
 [ext_resource type="Script" path="res://levels/player.gd" id="1_wcx5v"]
-[ext_resource type="Texture2D" uid="uid://c7exsyr82l6ps" path="res://resources/placeholder.png" id="2_soefd"]
+[ext_resource type="Texture2D" uid="uid://04yyt1yx2b4l" path="res://resources/tank_top.png" id="2_plydq"]
+[ext_resource type="Texture2D" uid="uid://b0txu1c7ljbex" path="res://resources/tank_bottom.png" id="3_mdjls"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d0stc"]
 size = Vector2(33, 33)
@@ -9,12 +10,19 @@ size = Vector2(33, 33)
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_wcx5v")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="TankTopPivot" type="Node2D" parent="."]
+
+[node name="TankTop" type="Sprite2D" parent="TankTopPivot"]
+z_index = 1
 position = Vector2(0, 1)
-texture = ExtResource("2_soefd")
+rotation = 1.5708
+texture = ExtResource("2_plydq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, 0.5)
 shape = SubResource("RectangleShape2D_d0stc")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="TankBottom" type="Sprite2D" parent="."]
+texture = ExtResource("3_mdjls")
