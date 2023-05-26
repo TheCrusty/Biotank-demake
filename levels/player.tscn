@@ -24,5 +24,8 @@ shape = SubResource("RectangleShape2D_d0stc")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
-[node name="TankBottom" type="Sprite2D" parent="."]
+[node name="TankBottomPivot" type="Node2D" parent="."]
+
+[node name="TankBottom" type="Sprite2D" parent="TankBottomPivot"]
+rotation = 1.5708
 texture = ExtResource("3_mdjls")
