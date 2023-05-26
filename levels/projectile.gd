@@ -1,17 +1,21 @@
 extends Area2D
-var speed = 420
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
+@export var speed = 480
+@export var damage = 1
 
+var exploding = false
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	position += transform.x * speed * delta
-
+	if not exploding:
+		position += transform.x * speed * delta
 
 func _on_area_entered(area):
 	if area.get_parent().has_method("takeDamage"):
-		area.get_parent().takeDamage(1)
-		queue_free()
+		area.get_parent().takeDamage(damage)
+		exploding = true
+		$Sprite2D.visible = false
+		$Explosion.visible = true
+		$Explosion.play("Explode")
+
+func _on_explosion_animation_finished():
+	queue_free()

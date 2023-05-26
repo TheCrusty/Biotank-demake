@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var speed = 400
+@export var speed = 300
 @export var rotation_speed = 1.5
 
 var projectile = preload("res://levels/projectile.tscn")
