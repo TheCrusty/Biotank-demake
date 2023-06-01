@@ -1,6 +1,9 @@
 extends Sprite2D
 
-var health = 5
+@export var health = 5
+
+enum STATES {IDLE, SEEK, ATTACK, DEATH}
+var CURRENT_STATE = STATES.IDLE
 
 func _ready():
 	var rng = RandomNumberGenerator.new()
