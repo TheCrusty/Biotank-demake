@@ -1,12 +1,15 @@
 [gd_scene load_steps=4 format=3 uid="uid://dyyxfp7qicuri"]
 
-[ext_resource type="Texture2D" uid="uid://c7exsyr82l6ps" path="res://resources/placeholder.png" id="1_cnwdq"]
+[ext_resource type="Texture2D" uid="uid://of87nrexjdah" path="res://resources/Sprite Sheet.png" id="1_11brc"]
 [ext_resource type="Script" path="res://levels/enemy.gd" id="2_5fy66"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qpv0l"]
+size = Vector2(465, 476)
 
 [node name="Enemy" type="Sprite2D"]
-texture = ExtResource("1_cnwdq")
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_11brc")
+hframes = 4
 script = ExtResource("2_5fy66")
 
 [node name="Area2D" type="Area2D" parent="."]
