@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://chxbl7gg23jt2"]
+[gd_scene load_steps=6 format=3 uid="uid://chxbl7gg23jt2"]
 
 [ext_resource type="Script" path="res://levels/player.gd" id="1_wcx5v"]
 [ext_resource type="Texture2D" uid="uid://04yyt1yx2b4l" path="res://resources/tank_top.png" id="2_plydq"]
@@ -6,6 +6,8 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d0stc"]
 size = Vector2(33, 33)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ftfed"]
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_wcx5v")
@@ -29,3 +31,8 @@ shape = SubResource("RectangleShape2D_d0stc")
 [node name="TankBottom" type="Sprite2D" parent="TankBottomPivot"]
 rotation = 1.5708
 texture = ExtResource("3_mdjls")
+
+[node name="VisibilityArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VisibilityArea"]
+shape = SubResource("RectangleShape2D_ftfed")

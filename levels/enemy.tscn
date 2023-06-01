@@ -4,26 +4,27 @@
 [ext_resource type="Script" path="res://levels/enemy.gd" id="2_5fy66"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qpv0l"]
-size = Vector2(465, 476)
+size = Vector2(48, 49)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_52841"]
-radius = 1510.3
+radius = 289.111
 
-[node name="Enemy" type="Sprite2D"]
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("1_11brc")
-hframes = 4
+[node name="Enemy" type="CharacterBody2D"]
 script = ExtResource("2_5fy66")
 
-[node name="Collision" type="Area2D" parent="."]
-collision_layer = 3
-collision_mask = 3
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Collision"]
-visible = false
+[node name="CollisionShape" type="CollisionShape2D" parent="."]
+position = Vector2(-1, -0.5)
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_qpv0l")
 
 [node name="VisionSphere" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="VisionSphere"]
 shape = SubResource("CircleShape2D_52841")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_11brc")
+hframes = 4
+
+[connection signal="area_entered" from="VisionSphere" to="." method="_on_vision_sphere_area_entered"]
