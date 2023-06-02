@@ -15,6 +15,8 @@ func _ready():
 	$Sprite2D.frame = rng.randi_range(0, 3)
 	
 func _process(delta):
+	if CURRENT_STATE == STATES.DEATH:
+		pass
 	if CURRENT_STATE == STATES.SEEK:
 		velocity = position.direction_to(target.position) * speed
 		look_at(target.position)
@@ -27,6 +29,7 @@ func takeDamage(amountDamage):
 	health = health - amountDamage
 	if health <= 0:
 		CURRENT_STATE = STATES.DEATH
+		$Sprite2D.frame = 4
 
 
 func _on_vision_sphere_area_entered(area):

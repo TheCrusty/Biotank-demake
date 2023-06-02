@@ -9,14 +9,16 @@ func _process(delta):
 	if not exploding:
 		position += transform.x * speed * delta
 
-func _on_area_entered(area):
+
+func _on_explosion_animation_finished():
+	queue_free()
+
+
+func _on_body_entered(body):
 	print("areaFlag")
-	if area.get_parent().has_method("takeDamage"):
-		area.get_parent().takeDamage(damage)
+	if body.has_method("takeDamage"):
+		body.takeDamage(damage)
 		exploding = true
 		$Sprite2D.visible = false
 		$Explosion.visible = true
 		$Explosion.play("Explode")
-
-func _on_explosion_animation_finished():
-	queue_free()

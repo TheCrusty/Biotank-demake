@@ -27,7 +27,7 @@ shape = SubResource("CircleShape2D_52841")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("1_11brc")
-hframes = 4
+hframes = 5
 
 [connection signal="area_entered" from="VisionSphere" to="." method="_on_vision_sphere_area_entered"]
 [connection signal="area_exited" from="VisionSphere" to="." method="_on_vision_sphere_area_exited"]
