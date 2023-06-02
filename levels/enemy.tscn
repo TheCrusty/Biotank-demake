@@ -10,11 +10,13 @@ size = Vector2(48, 49)
 radius = 289.111
 
 [node name="Enemy" type="CharacterBody2D"]
+collision_layer = 3
+collision_mask = 3
+input_pickable = true
 script = ExtResource("2_5fy66")
 
 [node name="CollisionShape" type="CollisionShape2D" parent="."]
 position = Vector2(-1, -0.5)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_qpv0l")
 
 [node name="VisionSphere" type="Area2D" parent="."]
@@ -28,3 +30,4 @@ texture = ExtResource("1_11brc")
 hframes = 4
 
 [connection signal="area_entered" from="VisionSphere" to="." method="_on_vision_sphere_area_entered"]
+[connection signal="area_exited" from="VisionSphere" to="." method="_on_vision_sphere_area_exited"]

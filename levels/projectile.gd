@@ -10,6 +10,7 @@ func _process(delta):
 		position += transform.x * speed * delta
 
 func _on_area_entered(area):
+	print("areaFlag")
 	if area.get_parent().has_method("takeDamage"):
 		area.get_parent().takeDamage(damage)
 		exploding = true
