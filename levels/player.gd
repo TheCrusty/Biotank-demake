@@ -10,6 +10,7 @@ var rotation_direction = 0
 func get_input():
 	if Input.is_action_just_pressed("Shoot"):
 		var projectile_instance = projectile.instantiate()
+		projectile_instance.shooter = self
 		owner.add_child(projectile_instance)
 		projectile_instance.transform = $TankTopPivot.global_transform
 	else:
