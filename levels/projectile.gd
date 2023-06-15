@@ -15,7 +15,6 @@ func _on_explosion_animation_finished():
 
 
 func _on_body_entered(body):
-	print("areaFlag")
 	if body.has_method("takeDamage"):
 		body.takeDamage(damage)
 		exploding = true

@@ -2,11 +2,8 @@ extends CharacterBody2D
 
 @export var health = 5
 var speed = 50
-
 var target
-
 var attackArea = 80
-
 enum STATES {IDLE, SEEK, ATTACK, DEATH}
 var CURRENT_STATE = STATES.IDLE
 
@@ -23,24 +20,23 @@ func _process(delta):
 		if position.distance_to(target.position) > attackArea:
 			move_and_slide()
 		else:
-			CURRENT_STATE = STATES.ATTACK
+			change_state(STATES.ATTACK)
 
 func takeDamage(amountDamage):
 	health = health - amountDamage
 	if health <= 0:
-		CURRENT_STATE = STATES.DEATH
+		change_state(STATES.DEATH)
 		$Sprite2D.frame = 4
-
 
 func _on_vision_sphere_area_entered(area):
 	if area != null && area.get_parent().name == "Player":
 		target = area.get_parent()
-		CURRENT_STATE = STATES.SEEK
-
-
+		change_state(STATES.SEEK)
 
 func _on_vision_sphere_area_exited(area):
 	if area != null && area.get_parent().name == "Player":
-		CURRENT_STATE = STATES.IDLE
-
-
+		change_state(STATES.IDLE)
+		
+func change_state(state):
+	if CURRENT_STATE != STATES.DEATH:
+		CURRENT_STATE = state
