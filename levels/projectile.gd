@@ -10,7 +10,6 @@ var shooter = null
 func _process(delta):
 	if not exploding:
 		position += transform.x * speed * delta
-		print(global_position.distance_to(shooter.global_position))
 		if global_position.distance_to(shooter.global_position) >= 400:
 			queue_free()
 
