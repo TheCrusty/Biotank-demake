@@ -36,6 +36,7 @@ func _physics_process(delta):
 	move_and_slide()
 	
 func apply_friction():
+	#fully stops at low speeds
 	if velocity.length() < 5:
 		velocity = Vector2.ZERO
 	# friction increases with velocity, slows down more quickly the faster you are moving
