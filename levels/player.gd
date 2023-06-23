@@ -1,11 +1,12 @@
 extends CharacterBody2D
 
-@export var speed = 0.0
 @export var max_speed = 14450.0
 @export var damper = 0.015
 @export var rotation_speed = 3
 
 var engine_power = 800
+var boost_power = 1600
+var current_boost = 0
 
 var acceleration = Vector2.ZERO
 
@@ -16,6 +17,10 @@ var rotation_direction = 0
 
 
 func get_input():
+	if Input.is_action_pressed("Boost"):
+		current_boost = boost_power
+	else:
+		current_boost = 0
 	if Input.is_action_just_pressed("Shoot"):
 		var projectile_instance = projectile.instantiate()
 		projectile_instance.shooter = self
@@ -24,7 +29,7 @@ func get_input():
 	else:
 		rotation_direction = Input.get_axis("Rotate_Left", "Rotate_Right")
 		if Input.is_action_pressed("Forward") or Input.is_action_pressed("Reverse"):
-			acceleration = transform.x * engine_power * Input.get_axis("Forward", "Reverse")
+			acceleration = transform.x * (engine_power + current_boost) * Input.get_axis("Forward", "Reverse")
 
 func _physics_process(delta):
 	acceleration = Vector2.ZERO
@@ -39,7 +44,6 @@ func apply_friction():
 	#fully stops at low speeds
 	if velocity.length() < 5:
 		velocity = Vector2.ZERO
-	# friction increases with velocity, slows down more quickly the faster you are moving
 	var friction_force = velocity * friction
 	if velocity.length() < 100:
 		friction_force *= 3
