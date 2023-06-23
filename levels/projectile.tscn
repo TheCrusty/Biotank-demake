@@ -142,5 +142,5 @@ visible = false
 sprite_frames = SubResource("SpriteFrames_p4lll")
 animation = &"Explode"
 
-[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="animation_finished" from="Explosion" to="." method="_on_explosion_animation_finished"]
