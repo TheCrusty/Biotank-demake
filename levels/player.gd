@@ -20,9 +20,13 @@ func get_input():
 	if Input.is_action_pressed("Boost"):
 		current_boost = boost_power
 		$BoostParticles.emitting = true
+		$Camera2D.zoom.y = 1.10
+		$Camera2D.zoom.x = 1.10
 	else:
 		current_boost = 0
 		$BoostParticles.emitting = false
+		$Camera2D.zoom.y = 1
+		$Camera2D.zoom.x = 1
 		
 	if Input.is_action_just_pressed("Shoot"):
 		var projectile_instance = projectile.instantiate()
