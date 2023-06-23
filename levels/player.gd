@@ -11,6 +11,7 @@ var acceleration = Vector2.ZERO
 var friction = -2
 var projectile = preload("res://levels/projectile.tscn")
 var rotation_direction = 0
+var max_zoom = 1.15
 
 
 func _on_ready():	
@@ -20,8 +21,10 @@ func get_input():
 	if Input.is_action_pressed("Boost"):
 		current_boost = boost_power
 		$BoostParticles.emitting = true
-		$Camera2D.zoom.y = 1.10
-		$Camera2D.zoom.x = 1.10
+		if $Camera2D.zoom.y < max_zoom:
+			$Camera2D.zoom.y += 0.008
+			$Camera2D.zoom.x += 0.008
+
 	else:
 		current_boost = 0
 		$BoostParticles.emitting = false
