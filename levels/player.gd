@@ -5,7 +5,7 @@ extends CharacterBody2D
 @export var rotation_speed = 3
 
 var engine_power = 800
-var boost_power = 1600
+var boost_power = 400
 var current_boost = 0
 
 var acceleration = Vector2.ZERO
