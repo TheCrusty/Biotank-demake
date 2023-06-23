@@ -7,20 +7,23 @@ extends CharacterBody2D
 var engine_power = 800
 var boost_power = 400
 var current_boost = 0
-
 var acceleration = Vector2.ZERO
-
 var friction = -2
-
 var projectile = preload("res://levels/projectile.tscn")
 var rotation_direction = 0
 
 
+func _on_ready():	
+	$BoostParticles.emitting = false
+	
 func get_input():
 	if Input.is_action_pressed("Boost"):
 		current_boost = boost_power
+		$BoostParticles.emitting = true
 	else:
 		current_boost = 0
+		$BoostParticles.emitting = false
+		
 	if Input.is_action_just_pressed("Shoot"):
 		var projectile_instance = projectile.instantiate()
 		projectile_instance.shooter = self

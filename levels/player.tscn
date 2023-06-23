@@ -41,8 +41,9 @@ texture = ExtResource("3_mdjls")
 rotation = 0.00209715
 shape = SubResource("RectangleShape2D_ftfed")
 
-[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+[node name="BoostParticles" type="GPUParticles2D" parent="."]
 material = SubResource("CanvasItemMaterial_u7v3f")
-position = Vector2(-19, 0)
-rotation = -3.18973
+position = Vector2(16, 5.96047e-08)
+rotation = -3.18565
+amount = 10
 process_material = ExtResource("4_yf1rt")
