@@ -3,7 +3,9 @@ extends CharacterBody2D
 @export var max_speed = 14450.0
 @export var damper = 0.015
 @export var rotation_speed = 3
-
+@export var boost_depletion_rate = 2000
+@export var total_boost_amount = 3000
+var current_boost_amount = 3000
 var engine_power = 800
 var boost_power = 400
 var current_boost = 0
@@ -12,25 +14,31 @@ var friction = -2
 var projectile = preload("res://levels/projectile.tscn")
 var rotation_direction = 0
 var max_zoom = 1.15
+var boosting = false
 
 
 func _on_ready():	
 	$BoostParticles.emitting = false
-	
-func get_input():
-	if Input.is_action_pressed("Boost"):
+
+func get_input(delta):
+	if Input.is_action_pressed("Boost") and current_boost_amount > 0:
 		current_boost = boost_power
+		boosting = true
+		current_boost_amount -= (boost_depletion_rate/2) * delta
 		$BoostParticles.emitting = true
 		if $Camera2D.zoom.y < max_zoom:
 			$Camera2D.zoom.y += 0.008
 			$Camera2D.zoom.x += 0.008
-
 	else:
+		boosting = false
+		if current_boost_amount < total_boost_amount:
+			current_boost_amount += (boost_depletion_rate/4) * delta
 		current_boost = 0
 		$BoostParticles.emitting = false
 		$Camera2D.zoom.y = 1
 		$Camera2D.zoom.x = 1
-		
+	print(current_boost_amount)		
+
 	if Input.is_action_just_pressed("Shoot"):
 		var projectile_instance = projectile.instantiate()
 		projectile_instance.shooter = self
@@ -41,15 +49,17 @@ func get_input():
 		if Input.is_action_pressed("Forward") or Input.is_action_pressed("Reverse"):
 			acceleration = transform.x * (engine_power + current_boost) * Input.get_axis("Forward", "Reverse")
 
+
 func _physics_process(delta):
 	acceleration = Vector2.ZERO
-	get_input()
+	get_input(delta)
 	apply_friction()
 	velocity += acceleration * delta
 	rotation += rotation_direction * rotation_speed * delta
 	$TankTopPivot.look_at(get_global_mouse_position())
 	move_and_slide()
-	
+
+
 func apply_friction():
 	#fully stops at low speeds
 	if velocity.length() < 5:
