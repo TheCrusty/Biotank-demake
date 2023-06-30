@@ -5,6 +5,7 @@ extends CharacterBody2D
 @export var rotation_speed = 3
 @export var boost_depletion_rate = 2000
 @export var total_boost_amount = 3000
+@export var bump_damage = 5
 var current_boost_amount = 3000
 var engine_power = 800
 var boost_power = 400
@@ -29,6 +30,8 @@ func get_input(delta):
 		if $Camera2D.zoom.y < max_zoom:
 			$Camera2D.zoom.y += 0.008
 			$Camera2D.zoom.x += 0.008
+		
+		
 	else:
 		boosting = false
 		if current_boost_amount < total_boost_amount:
@@ -37,7 +40,6 @@ func get_input(delta):
 		$BoostParticles.emitting = false
 		$Camera2D.zoom.y = 1
 		$Camera2D.zoom.x = 1
-	print(current_boost_amount)		
 
 	if Input.is_action_just_pressed("Shoot"):
 		var projectile_instance = projectile.instantiate()
@@ -68,3 +70,8 @@ func apply_friction():
 	if velocity.length() < 100:
 		friction_force *= 3
 	acceleration += friction_force
+
+
+func _on_bump_zone_body_entered(body):
+	if boosting && body.has_method("takeDamage"):
+		body.takeDamage(bump_damage)

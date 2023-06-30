@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://chxbl7gg23jt2"]
+[gd_scene load_steps=9 format=3 uid="uid://chxbl7gg23jt2"]
 
 [ext_resource type="Script" path="res://levels/player.gd" id="1_wcx5v"]
 [ext_resource type="Texture2D" uid="uid://04yyt1yx2b4l" path="res://resources/tank_top.png" id="2_plydq"]
@@ -11,6 +11,9 @@ size = Vector2(33, 33)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ftfed"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_u7v3f"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vmpi2"]
+radius = 18.0278
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_wcx5v")
@@ -48,3 +51,11 @@ rotation = -3.18565
 amount = 50
 process_material = ExtResource("4_yf1rt")
 lifetime = 0.8
+
+[node name="BumpZone" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BumpZone"]
+position = Vector2(-7, 0)
+shape = SubResource("CircleShape2D_vmpi2")
+
+[connection signal="body_entered" from="BumpZone" to="." method="_on_bump_zone_body_entered"]
