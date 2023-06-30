@@ -77,3 +77,4 @@ func apply_friction():
 func _on_bump_zone_body_entered(body):
 	if boosting && body.has_method("takeDamage"):
 		body.takeDamage(bump_damage)
+		#body.velocity = position.direction_to(body.position) * velocity

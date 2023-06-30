@@ -13,7 +13,7 @@ func _ready():
 	
 func _process(delta):
 	if CURRENT_STATE == STATES.DEATH:
-		pass
+		$CollisionShape.set_disabled(true)
 	if CURRENT_STATE == STATES.SEEK:
 		velocity = position.direction_to(target.position) * speed
 		look_at(target.position)
