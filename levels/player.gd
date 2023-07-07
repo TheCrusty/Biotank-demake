@@ -47,7 +47,7 @@ func get_input(delta):
 		var projectile_instance = projectile.instantiate()
 		projectile_instance.shooter = self
 		owner.add_child(projectile_instance)
-		projectile_instance.transform = $TankTopPivot.global_transform
+		projectile_instance.onFired($TankTopPivot.global_transform)
 	else:
 		rotation_direction = Input.get_axis("Rotate_Left", "Rotate_Right")
 		if Input.is_action_pressed("Forward") or Input.is_action_pressed("Reverse"):
@@ -77,6 +77,4 @@ func apply_friction():
 func _on_bump_zone_body_entered(body):
 	if boosting && body.has_method("takeDamage"):
 		body.takeDamage(bump_damage)
-		print(body.name)
-		print(body.velocity)
 		body.externalForce += velocity/2
