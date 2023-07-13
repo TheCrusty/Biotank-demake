@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cmods7vvtmuca"]
+
+[ext_resource type="PackedScene" uid="uid://dyyxfp7qicuri" path="res://levels/enemy.tscn" id="1_dljnt"]
+[ext_resource type="PackedScene" uid="uid://dswbfoe371o1p" path="res://levels/enemy_projectile.tscn" id="2_28gnr"]
+
+[node name="Enemy" instance=ExtResource("1_dljnt")]
+scale = Vector2(1.2, 1.2)
+health = 10
+speed = 25
+type = "ranged"
+
+[node name="EnemyProjectile" parent="." index="3" instance=ExtResource("2_28gnr")]
+visible = false
+position = Vector2(0, 33.3333)
