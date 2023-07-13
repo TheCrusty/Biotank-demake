@@ -28,5 +28,6 @@ position = Vector2(744, 196)
 [node name="Enemy6" parent="." instance=ExtResource("2_1ccyn")]
 position = Vector2(234, 195)
 
-[node name="Enemy7" parent="." instance=ExtResource("3_dc3ds")]
-position = Vector2(592, 92)
+[node name="projectile_enemy" parent="." instance=ExtResource("3_dc3ds")]
+position = Vector2(533, 73)
+scale = Vector2(1.44, 1.44)

@@ -2,17 +2,23 @@ extends CharacterBody2D
 
 @export var health = 5
 @export var speed = 50
+@export var attackArea = 80
+@export var type = "melee"
 var friction = -2
 var externalForce = Vector2.ZERO
 var seekMovement = Vector2.ZERO
 var target
-var attackArea = 80
+var projectile
+
 enum STATES {IDLE, SEEK, ATTACK, DEATH}
 var CURRENT_STATE = STATES.IDLE
 
 func _ready():
 	var rng = RandomNumberGenerator.new()
 	$Sprite2D.frame = rng.randi_range(0, 3)
+	
+	if type == "ranged":
+		projectile = $projectile
 	
 func _process(delta):
 	seekMovement = Vector2.ZERO
