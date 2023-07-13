@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 @export var health = 5
-var speed = 50
+@export var speed = 50
 var friction = -2
 var externalForce = Vector2.ZERO
 var seekMovement = Vector2.ZERO

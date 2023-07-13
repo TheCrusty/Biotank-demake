@@ -19,6 +19,8 @@ script = ExtResource("2_5fy66")
 position = Vector2(-1, -0.5)
 shape = SubResource("RectangleShape2D_qpv0l")
 
+[node name="Nodetest2D" type="Node2D" parent="CollisionShape"]
+
 [node name="VisionSphere" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="VisionSphere"]

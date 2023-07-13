@@ -5,7 +5,6 @@ extends CharacterBody2D
 @export var pushFactor = 0.25
 
 var exploding = false
-
 var shooter = null
 
 func _process(delta):
