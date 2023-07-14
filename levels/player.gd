@@ -18,9 +18,9 @@ var max_zoom = 1.15
 var boosting = false
 
 
-func _on_ready():	
+func _on_ready():
 	$BoostParticles.emitting = false
-	
+
 
 func get_input(delta):
 	if Input.is_action_pressed("Boost") and current_boost_amount > 0:
@@ -62,6 +62,9 @@ func _physics_process(delta):
 	rotation += rotation_direction * rotation_speed * delta
 	$TankTopPivot.look_at(get_global_mouse_position())
 	move_and_slide()
+	
+func takeDamage(damageAmount):
+	print(damageAmount)
 
 
 func apply_friction():

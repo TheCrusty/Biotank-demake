@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dyyxfp7qicuri"]
+[gd_scene load_steps=6 format=3 uid="uid://dyyxfp7qicuri"]
 
 [ext_resource type="Texture2D" uid="uid://of87nrexjdah" path="res://resources/Sprite Sheet.png" id="1_11brc"]
 [ext_resource type="Script" path="res://levels/enemy.gd" id="2_5fy66"]
@@ -8,6 +8,9 @@ size = Vector2(48, 49)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_52841"]
 radius = 289.111
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gsfdg"]
+radius = 193.01
 
 [node name="Enemy" type="CharacterBody2D"]
 collision_layer = 3
@@ -31,5 +34,15 @@ scale = Vector2(0.1, 0.1)
 texture = ExtResource("1_11brc")
 hframes = 5
 
+[node name="AttackRange" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackRange"]
+shape = SubResource("CircleShape2D_gsfdg")
+
+[node name="AttackTimer" type="Timer" parent="."]
+
 [connection signal="area_entered" from="VisionSphere" to="." method="_on_vision_sphere_area_entered"]
 [connection signal="area_exited" from="VisionSphere" to="." method="_on_vision_sphere_area_exited"]
+[connection signal="body_entered" from="AttackRange" to="." method="_on_attack_range_body_entered"]
+[connection signal="body_exited" from="AttackRange" to="." method="_on_attack_range_body_exited"]
+[connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]

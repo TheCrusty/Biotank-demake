@@ -2,13 +2,13 @@ extends CharacterBody2D
 
 @export var health = 5
 @export var speed = 50
-@export var attackArea = 80
 @export var type = "melee"
+@export var damage = 2
 var friction = -2
 var externalForce = Vector2.ZERO
 var seekMovement = Vector2.ZERO
 var target
-var projectile
+var projectile = preload("res://levels/enemy_projectile.tscn")
 
 enum STATES {IDLE, SEEK, ATTACK, DEATH}
 var CURRENT_STATE = STATES.IDLE
@@ -17,9 +17,6 @@ func _ready():
 	var rng = RandomNumberGenerator.new()
 	$Sprite2D.frame = rng.randi_range(0, 3)
 	
-	if type == "ranged":
-		projectile = $projectile
-	
 func _process(delta):
 	seekMovement = Vector2.ZERO
 	if CURRENT_STATE == STATES.DEATH:
@@ -27,8 +24,6 @@ func _process(delta):
 	if CURRENT_STATE == STATES.SEEK:
 		seekMovement = position.direction_to(target.position) * speed 
 		look_at(target.position)
-		if position.distance_to(target.position) < attackArea:
-			change_state(STATES.ATTACK)
 	velocity = externalForce + seekMovement
 	applyForces()
 	move_and_slide()
@@ -39,7 +34,16 @@ func applyForces():
 	if velocity.length() < 5:
 		velocity = Vector2.ZERO
 		externalForce = Vector2.ZERO
-	
+
+func doAttack():
+	if type == "melee":
+		target.takeDamage(damage)
+	else:
+		var projectile_instance = projectile.instantiate()
+		projectile_instance.shooter = self
+		owner.add_child(projectile_instance)
+		projectile_instance.onFired(global_transform)
+
 func takeDamage(amountDamage):
 	health = health - amountDamage
 	if health <= 0:
@@ -58,3 +62,19 @@ func _on_vision_sphere_area_exited(area):
 func change_state(state):
 	if CURRENT_STATE != STATES.DEATH:
 		CURRENT_STATE = state
+
+
+func _on_attack_range_body_entered(body):
+	if body != null && body.name == "Player":
+		$AttackTimer.start()
+		change_state(STATES.ATTACK)
+
+
+func _on_attack_range_body_exited(body):
+	if body != null && body.name == "Player":
+		$AttackTimer.stop()
+		change_state(STATES.SEEK)
+
+
+func _on_attack_timer_timeout():
+	doAttack()
