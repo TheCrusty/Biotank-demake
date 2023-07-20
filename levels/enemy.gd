@@ -61,11 +61,12 @@ func _on_vision_sphere_area_exited(area):
 		change_state(STATES.IDLE)
 		
 func change_state(state):
-	if CURRENT_STATE != STATES.DEATH:
-		CURRENT_STATE = state
-	else:
+	if CURRENT_STATE == STATES.DEATH:
+		return
+	if state == STATES.DEATH:
 		$AttackTimer.stop()
 		$AttackRange.set_monitoring(false)
+	CURRENT_STATE = state
 
 func _on_attack_range_body_entered(body):
 	if body != null && body.name == "Player":
