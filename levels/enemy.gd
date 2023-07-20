@@ -36,6 +36,7 @@ func applyForces():
 		externalForce = Vector2.ZERO
 
 func doAttack():
+	look_at(target.position)
 	if type == "melee":
 		target.takeDamage(damage)
 	else:
@@ -62,19 +63,19 @@ func _on_vision_sphere_area_exited(area):
 func change_state(state):
 	if CURRENT_STATE != STATES.DEATH:
 		CURRENT_STATE = state
-
+	else:
+		$AttackTimer.stop()
+		$AttackRange.set_monitoring(false)
 
 func _on_attack_range_body_entered(body):
 	if body != null && body.name == "Player":
 		$AttackTimer.start()
 		change_state(STATES.ATTACK)
 
-
 func _on_attack_range_body_exited(body):
 	if body != null && body.name == "Player":
 		$AttackTimer.stop()
 		change_state(STATES.SEEK)
-
 
 func _on_attack_timer_timeout():
 	doAttack()
