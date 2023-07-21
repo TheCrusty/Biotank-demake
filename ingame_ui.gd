@@ -8,4 +8,5 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	var Player = get_parent().get_parent().get_node("Player")
+	$ProgressBar.set_value((Player.current_boost_amount / Player.total_boost_amount) * 100)
