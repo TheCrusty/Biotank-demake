@@ -4,6 +4,7 @@ extends CharacterBody2D
 @export var speed = 50
 @export var type = "melee"
 @export var damage = 2
+@export var attackDelay = 2.0
 var friction = -2
 var externalForce = Vector2.ZERO
 var seekMovement = Vector2.ZERO
@@ -16,7 +17,7 @@ var CURRENT_STATE = STATES.IDLE
 func _ready():
 	var rng = RandomNumberGenerator.new()
 	$Sprite2D.frame = rng.randi_range(0, 3)
-	
+	$AttackTimer.wait_time = attackDelay
 func _process(delta):
 	seekMovement = Vector2.ZERO
 	if CURRENT_STATE == STATES.DEATH:
@@ -29,8 +30,10 @@ func _process(delta):
 	move_and_slide()
 
 func applyForces():
+	#Shrinks the value of an applied external force over time kind of like LERP
 	if externalForce.length() > 5:
 		externalForce *= 0.9
+	#Resets the values, basically functions like MathFloor
 	if velocity.length() < 5:
 		velocity = Vector2.ZERO
 		externalForce = Vector2.ZERO
@@ -39,6 +42,7 @@ func doAttack():
 	look_at(target.position)
 	if type == "melee":
 		target.takeDamage(damage)
+		$AnimationPlayer.play("meleeAttackAnimation")
 	else:
 		var projectile_instance = projectile.instantiate()
 		projectile_instance.shooter = self
