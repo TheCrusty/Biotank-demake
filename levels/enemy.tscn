@@ -8,10 +8,10 @@
 size = Vector2(48, 49)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_52841"]
-radius = 289.111
+radius = 265.377
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gsfdg"]
-radius = 193.01
+radius = 29.6816
 
 [node name="Enemy" type="CharacterBody2D"]
 collision_layer = 3
