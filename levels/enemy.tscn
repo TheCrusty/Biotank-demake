@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://dyyxfp7qicuri"]
+[gd_scene load_steps=7 format=3 uid="uid://dyyxfp7qicuri"]
 
 [ext_resource type="Texture2D" uid="uid://of87nrexjdah" path="res://resources/Sprite Sheet.png" id="1_11brc"]
 [ext_resource type="Script" path="res://levels/enemy.gd" id="2_5fy66"]
+[ext_resource type="PackedScene" uid="uid://c58w0eaplksq5" path="res://levels/state_handler.tscn" id="3_jhqp4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qpv0l"]
 size = Vector2(48, 49)
@@ -40,6 +41,8 @@ hframes = 5
 shape = SubResource("CircleShape2D_gsfdg")
 
 [node name="AttackTimer" type="Timer" parent="."]
+
+[node name="StateHandler" parent="." instance=ExtResource("3_jhqp4")]
 
 [connection signal="area_entered" from="VisionSphere" to="." method="_on_vision_sphere_area_entered"]
 [connection signal="area_exited" from="VisionSphere" to="." method="_on_vision_sphere_area_exited"]

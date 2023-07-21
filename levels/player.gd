@@ -29,9 +29,9 @@ func get_input(delta):
 		current_boost_amount -= (boost_depletion_rate/2) * delta
 		$BoostParticles.emitting = true
 		
-		if $Camera2D.zoom.y < max_zoom:
-			$Camera2D.zoom.y += 0.008
-			$Camera2D.zoom.x += 0.008
+		#if $Camera2D.zoom.y < max_zoom:
+			#$Camera2D.zoom.y += 0.008
+			#$Camera2D.zoom.x += 0.008
 	
 	else:
 		boosting = false
@@ -39,8 +39,8 @@ func get_input(delta):
 			current_boost_amount += (boost_depletion_rate/4) * delta
 		current_boost = 0
 		$BoostParticles.emitting = false
-		$Camera2D.zoom.y = 1
-		$Camera2D.zoom.x = 1
+		#$Camera2D.zoom.y = 1
+		#$Camera2D.zoom.x = 1
 	$TankBottomPivot/TankBottom.set_modulate(Color(1, current_boost_amount/total_boost_amount, current_boost_amount/total_boost_amount, 1))
 
 	if Input.is_action_just_pressed("Shoot"):
