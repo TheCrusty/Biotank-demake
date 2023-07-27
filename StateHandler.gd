@@ -8,7 +8,7 @@ func change_state(state):
 	if CURRENT_STATE == STATES.DEATH:
 		return
 	if state == STATES.DEATH:
- 		$AttackTimer.stop()
+		$AttackTimer.stop()
 		$AttackRange.set_monitoring(false)
 	CURRENT_STATE = state
 	
