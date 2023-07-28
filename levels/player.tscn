@@ -59,8 +59,6 @@ position = Vector2(-7, 0)
 shape = SubResource("CircleShape2D_vmpi2")
 
 [node name="BloodLustTimer" type="Timer" parent="."]
-wait_time = 10.0
-one_shot = true
 
 [connection signal="body_entered" from="BumpZone" to="." method="_on_bump_zone_body_entered"]
 [connection signal="timeout" from="BloodLustTimer" to="." method="_on_blood_lust_timer_timeout"]

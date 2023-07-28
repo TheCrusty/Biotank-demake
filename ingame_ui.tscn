@@ -10,7 +10,6 @@ offset_left = 5.0
 offset_top = 597.0
 offset_right = 312.0
 offset_bottom = 639.0
-value = 50.0
 show_percentage = false
 
 [node name="BloodLustBar" type="ProgressBar" parent="."]
