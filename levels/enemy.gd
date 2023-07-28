@@ -14,11 +14,14 @@ var projectile = preload("res://levels/enemy_projectile.tscn")
 enum STATES {IDLE, SEEK, ATTACK, DEATH}
 var CURRENT_STATE = STATES.IDLE
 
+signal enemy_death
+
 func _ready():
 	var rng = RandomNumberGenerator.new()
 	$Sprite2D.frame = rng.randi_range(0, 3)
 	$AttackTimer.wait_time = attackDelay
-func _process(delta):
+	var player_node = get_parent().get_node("Player")
+	connect("enemy_death",Callable(player_node,"_enemy_death_handler"))
 	seekMovement = Vector2.ZERO
 	if CURRENT_STATE == STATES.DEATH:
 		$CollisionShape.set_disabled(true)
@@ -70,6 +73,7 @@ func change_state(state):
 	if state == STATES.DEATH:
 		$AttackTimer.stop()
 		$AttackRange.set_monitoring(false)
+		emit_signal("enemy_death")
 	CURRENT_STATE = state
 
 func _on_attack_range_body_entered(body):

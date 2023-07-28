@@ -16,6 +16,12 @@ var projectile = preload("res://levels/projectile.tscn")
 var rotation_direction = 0
 var max_zoom = 1.15
 var boosting = false
+var kill_combo_count = 0
+signal enemy_death
+
+func _enemy_death_handler():
+	kill_combo_count += 1
+	print(kill_combo_count)
 
 
 func _on_ready():
@@ -81,3 +87,11 @@ func _on_bump_zone_body_entered(body):
 	if boosting && body.has_method("takeDamage"):
 		body.takeDamage(bump_damage)
 		body.externalForce += velocity/2
+
+func  reset_bloodlust():
+	kill_combo_count = 0
+
+
+func _on_blood_lust_timer_timeout():
+	reset_bloodlust()
+	
