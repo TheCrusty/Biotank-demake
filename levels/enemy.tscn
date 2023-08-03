@@ -1,8 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://dyyxfp7qicuri"]
+[gd_scene load_steps=11 format=3 uid="uid://dyyxfp7qicuri"]
 
 [ext_resource type="Texture2D" uid="uid://of87nrexjdah" path="res://resources/Sprite Sheet.png" id="1_11brc"]
 [ext_resource type="Script" path="res://levels/enemy.gd" id="2_5fy66"]
-[ext_resource type="PackedScene" uid="uid://c58w0eaplksq5" path="res://levels/state_handler.tscn" id="3_jhqp4"]
+[ext_resource type="Script" path="res://classes/state_machine.gd" id="3_7yb20"]
+[ext_resource type="Script" path="res://levels/Idle.gd" id="4_ce718"]
+[ext_resource type="Script" path="res://levels/Seek.gd" id="5_fkw4u"]
+[ext_resource type="Script" path="res://levels/Attack.gd" id="6_0wde1"]
+[ext_resource type="Script" path="res://levels/Death.gd" id="7_qn0t7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qpv0l"]
 size = Vector2(48, 49)
@@ -42,7 +46,21 @@ shape = SubResource("CircleShape2D_gsfdg")
 
 [node name="AttackTimer" type="Timer" parent="."]
 
-[node name="StateHandler" parent="." instance=ExtResource("3_jhqp4")]
+[node name="StateMachine" type="Node" parent="."]
+script = ExtResource("3_7yb20")
+initial_state = NodePath("Idle")
+
+[node name="Idle" type="Node" parent="StateMachine"]
+script = ExtResource("4_ce718")
+
+[node name="Seek" type="Node" parent="StateMachine"]
+script = ExtResource("5_fkw4u")
+
+[node name="Attack" type="Node" parent="StateMachine"]
+script = ExtResource("6_0wde1")
+
+[node name="Death" type="Node" parent="StateMachine"]
+script = ExtResource("7_qn0t7")
 
 [connection signal="area_entered" from="VisionSphere" to="." method="_on_vision_sphere_area_entered"]
 [connection signal="area_exited" from="VisionSphere" to="." method="_on_vision_sphere_area_exited"]

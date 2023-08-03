@@ -1,3 +1,4 @@
+class_name Enemy
 extends CharacterBody2D
 
 @export var health = 5
@@ -18,6 +19,7 @@ func _ready():
 	var rng = RandomNumberGenerator.new()
 	$Sprite2D.frame = rng.randi_range(0, 3)
 	$AttackTimer.wait_time = attackDelay
+	
 func _process(delta):
 	seekMovement = Vector2.ZERO
 	if CURRENT_STATE == STATES.DEATH:
