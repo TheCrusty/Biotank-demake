@@ -70,7 +70,7 @@ func _physics_process(delta):
 	move_and_slide()
 	
 func takeDamage(damageAmount):
-	print(damageAmount)
+	pass
 
 func apply_friction():
 	#fully stops at low speeds
