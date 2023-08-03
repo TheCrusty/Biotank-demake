@@ -1,4 +1,9 @@
+# Idle.gd
 extends EnemyState
 
 func update(delta):
-	print("here")
+	super.update(delta)
+	if enemy.playerInSight:
+		print("transitioning")
+		state_machine.transition_to("Seek")
+	

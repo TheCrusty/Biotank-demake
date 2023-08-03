@@ -14,4 +14,7 @@ func _ready():
 	# ensures the state is attached to an enemy
 	assert(enemy != null)
 
-
+func update(_delta: float) -> void:
+	enemy.velocity = enemy.externalForce + enemy.seekMovement
+	enemy.applyForces()
+	enemy.move_and_slide()

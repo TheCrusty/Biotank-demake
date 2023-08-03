@@ -1,11 +1,12 @@
 extends EnemyState
 
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
+func update(delta):
+	enemy.seekMovement = Vector2.ZERO
+	enemy.seekMovement = enemy.position.direction_to(enemy.target.position) * enemy.speed 
+	enemy.look_at(enemy.target.position)
+	super.update(delta)
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+# sets seekmovement back to zero before leaving seek
+func exit():
+	enemy.seekMovement = Vector2.ZERO
