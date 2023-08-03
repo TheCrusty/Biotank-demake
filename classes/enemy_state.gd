@@ -13,6 +13,12 @@ func _ready():
 	
 	# ensures the state is attached to an enemy
 	assert(enemy != null)
+	
+	ready()
+	
+# extra ready function to override
+func ready():
+	pass
 
 func update(_delta: float) -> void:
 	enemy.velocity = enemy.externalForce + enemy.seekMovement

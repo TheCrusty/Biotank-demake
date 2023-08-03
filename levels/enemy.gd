@@ -14,19 +14,13 @@ var seekMovement = Vector2.ZERO
 var target
 var projectile = preload("res://levels/enemy_projectile.tscn")
 var playerInSight = false
+var inAttackRange = false
 
-
-enum STATES {IDLE, SEEK, ATTACK, DEATH}
-var CURRENT_STATE = STATES.IDLE
 
 func _ready():
 	var rng = RandomNumberGenerator.new()
 	$Sprite2D.frame = rng.randi_range(0, 3)
 	$AttackTimer.wait_time = attackDelay
-	
-func _process(delta):
-	if CURRENT_STATE == STATES.DEATH:
-		$CollisionShape.set_disabled(true)
 
 func applyForces():
 	#Shrinks the value of an applied external force over time kind of like LERP
@@ -51,7 +45,7 @@ func doAttack():
 func takeDamage(amountDamage):
 	health = health - amountDamage
 	if health <= 0:
-		change_state(STATES.DEATH)
+		$StateMachine.transition_to("Death")
 		$Sprite2D.frame = 4
 
 func _on_vision_sphere_area_entered(area):
@@ -62,24 +56,14 @@ func _on_vision_sphere_area_entered(area):
 func _on_vision_sphere_area_exited(area):
 	if area != null && area.get_parent().name == "Player":
 		playerInSight = false
-		
-func change_state(state):
-	if CURRENT_STATE == STATES.DEATH:
-		return
-	if state == STATES.DEATH:
-		$AttackTimer.stop()
-		$AttackRange.set_monitoring(false)
-	CURRENT_STATE = state
 
 func _on_attack_range_body_entered(body):
 	if body != null && body.name == "Player":
-		$AttackTimer.start()
-		change_state(STATES.ATTACK)
+		inAttackRange = true
 
 func _on_attack_range_body_exited(body):
 	if body != null && body.name == "Player":
-		$AttackTimer.stop()
-		change_state(STATES.SEEK)
+		inAttackRange = false
 
 func _on_attack_timer_timeout():
 	doAttack()

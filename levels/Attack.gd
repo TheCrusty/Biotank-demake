@@ -1,11 +1,17 @@
 extends EnemyState
 
+var AttackTimer
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
+func ready():
+	AttackTimer = enemy.get_node("AttackTimer")
 
+func update(delta):
+	super.update(delta)
+	if(!enemy.inAttackRange):
+		state_machine.transition_to("Seek")
+	
+func enter(_msg := {}):
+	AttackTimer.start()
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+func exit():
+	AttackTimer.stop()
