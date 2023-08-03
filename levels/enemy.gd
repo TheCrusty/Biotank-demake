@@ -17,10 +17,14 @@ var playerInSight = false
 var inAttackRange = false
 
 
+signal enemy_death
+
 func _ready():
 	var rng = RandomNumberGenerator.new()
 	$Sprite2D.frame = rng.randi_range(0, 3)
 	$AttackTimer.wait_time = attackDelay
+	var player_node = get_parent().get_node("Player")
+	connect("enemy_death",Callable(player_node,"_enemy_death_handler"))
 
 func applyForces():
 	#Shrinks the value of an applied external force over time kind of like LERP

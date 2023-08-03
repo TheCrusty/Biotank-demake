@@ -16,11 +16,19 @@ var projectile = preload("res://levels/projectile.tscn")
 var rotation_direction = 0
 var max_zoom = 1.15
 var boosting = false
+var current_kill_combo_count = 0.0
+var max_kill_combo_count = 5.0
+signal enemy_death
 
+func _enemy_death_handler():
+	if $BloodLustTimer.is_stopped():
+		if current_kill_combo_count < max_kill_combo_count:
+			current_kill_combo_count += 1.0
+		else:
+			$BloodLustTimer.start()
 
 func _on_ready():
 	$BoostParticles.emitting = false
-
 
 func get_input(delta):
 	if Input.is_action_pressed("Boost") and current_boost_amount > 0:
@@ -28,11 +36,9 @@ func get_input(delta):
 		boosting = true
 		current_boost_amount -= (boost_depletion_rate/2) * delta
 		$BoostParticles.emitting = true
-		
 		#if $Camera2D.zoom.y < max_zoom:
 			#$Camera2D.zoom.y += 0.008
 			#$Camera2D.zoom.x += 0.008
-	
 	else:
 		boosting = false
 		if current_boost_amount < total_boost_amount:
@@ -66,7 +72,6 @@ func _physics_process(delta):
 func takeDamage(damageAmount):
 	print(damageAmount)
 
-
 func apply_friction():
 	#fully stops at low speeds
 	if velocity.length() < 5:
@@ -76,8 +81,14 @@ func apply_friction():
 		friction_force *= 3
 	acceleration += friction_force
 
-
 func _on_bump_zone_body_entered(body):
 	if boosting && body.has_method("takeDamage"):
 		body.takeDamage(bump_damage)
 		body.externalForce += velocity/2
+
+func _on_blood_lust_timer_timeout():
+	if current_kill_combo_count > 0:
+		current_kill_combo_count -= 1
+	else:
+		$BloodLustTimer.stop()
+	

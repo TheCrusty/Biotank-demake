@@ -9,4 +9,6 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	var Player = get_parent().get_parent().get_node("Player")
-	$ProgressBar.set_value((Player.current_boost_amount / Player.total_boost_amount) * 100)
+	$BoostBar.set_value((Player.current_boost_amount / Player.total_boost_amount) * 100)
+	$BloodLustBar.set_value((Player.current_kill_combo_count / Player.max_kill_combo_count) * 100)
+	print((Player.current_kill_combo_count / Player.max_kill_combo_count) * 100)
