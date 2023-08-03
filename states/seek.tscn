@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://di8cejqs8va64"]
 
-[ext_resource type="Script" path="res://levels/Seek.gd" id="1_sr3or"]
+[ext_resource type="Script" path="res://states/Seek.gd" id="1_sr3or"]
 
 [node name="Seek" type="Node"]
 script = ExtResource("1_sr3or")
