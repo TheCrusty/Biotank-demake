@@ -3,10 +3,10 @@
 [ext_resource type="Texture2D" uid="uid://of87nrexjdah" path="res://resources/Sprite Sheet.png" id="1_11brc"]
 [ext_resource type="Script" path="res://levels/enemy.gd" id="2_5fy66"]
 [ext_resource type="Script" path="res://classes/state_machine.gd" id="3_7yb20"]
-[ext_resource type="Script" path="res://levels/Idle.gd" id="4_ce718"]
-[ext_resource type="Script" path="res://levels/Seek.gd" id="5_fkw4u"]
-[ext_resource type="Script" path="res://levels/Attack.gd" id="6_0wde1"]
-[ext_resource type="Script" path="res://levels/Death.gd" id="7_qn0t7"]
+[ext_resource type="PackedScene" uid="uid://bfykbmq72f75o" path="res://states/idle.tscn" id="4_mmb0p"]
+[ext_resource type="PackedScene" uid="uid://di8cejqs8va64" path="res://states/seek.tscn" id="5_0eofr"]
+[ext_resource type="PackedScene" uid="uid://noqq5atvqali" path="res://states/attack.tscn" id="6_t7a8q"]
+[ext_resource type="PackedScene" uid="uid://gryp1j4xysh3" path="res://states/death.tscn" id="7_rlwa1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qpv0l"]
 size = Vector2(48, 49)
@@ -50,17 +50,13 @@ shape = SubResource("CircleShape2D_gsfdg")
 script = ExtResource("3_7yb20")
 initial_state = NodePath("Idle")
 
-[node name="Idle" type="Node" parent="StateMachine"]
-script = ExtResource("4_ce718")
+[node name="Idle" parent="StateMachine" instance=ExtResource("4_mmb0p")]
 
-[node name="Seek" type="Node" parent="StateMachine"]
-script = ExtResource("5_fkw4u")
+[node name="Seek" parent="StateMachine" instance=ExtResource("5_0eofr")]
 
-[node name="Attack" type="Node" parent="StateMachine"]
-script = ExtResource("6_0wde1")
+[node name="Attack" parent="StateMachine" instance=ExtResource("6_t7a8q")]
 
-[node name="Death" type="Node" parent="StateMachine"]
-script = ExtResource("7_qn0t7")
+[node name="Death" parent="StateMachine" instance=ExtResource("7_rlwa1")]
 
 [connection signal="area_entered" from="VisionSphere" to="." method="_on_vision_sphere_area_entered"]
 [connection signal="area_exited" from="VisionSphere" to="." method="_on_vision_sphere_area_exited"]

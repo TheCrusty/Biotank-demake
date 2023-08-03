@@ -1,3 +1,4 @@
+# Death.gd
 extends EnemyState
 
 func enter(_msg := {}):
