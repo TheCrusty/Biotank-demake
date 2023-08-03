@@ -43,10 +43,10 @@ func doAttack():
 		projectile_instance.onFired(global_transform)
 
 func takeDamage(amountDamage):
-	health = health - amountDamage
-	if health <= 0:
-		$StateMachine.transition_to("Death")
-		$Sprite2D.frame = 4
+	if health > 0:
+		health = health - amountDamage
+		if(health <= 0):
+			$StateMachine.transition_to("Death")
 
 func _on_vision_sphere_area_entered(area):
 	if area != null && area.get_parent().name == "Player":

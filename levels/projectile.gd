@@ -22,7 +22,6 @@ func onFired(initialTransform):
 	velocity = Vector2.RIGHT.rotated(get_rotation()) * speed
 
 func _on_area_2d_body_entered(body):
-	print(body.name)
 	if body.has_method("takeDamage"):
 		body.externalForce = velocity * pushFactor
 		body.takeDamage(damage)
