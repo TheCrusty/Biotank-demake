@@ -26,6 +26,7 @@ func _enemy_death_handler():
 		if current_kill_combo_count < max_kill_combo_count:
 			current_kill_combo_count += 1.0
 		else:
+			$StateMachine.transition_to("invincible")
 			$BloodLustTimer.start()
 
 func _on_ready():
@@ -69,9 +70,6 @@ func _physics_process(delta):
 	rotation += rotation_direction * rotation_speed * delta
 	$TankTopPivot.look_at(get_global_mouse_position())
 	move_and_slide()
-	
-#func takeDamage(damageAmount):
-#	current_kill_combo_count -= 1
 
 func apply_friction():
 	#fully stops at low speeds
@@ -92,4 +90,5 @@ func _on_blood_lust_timer_timeout():
 		current_kill_combo_count -= 1
 	else:
 		$BloodLustTimer.stop()
+		$StateMachine.transition_to("default")
 	
