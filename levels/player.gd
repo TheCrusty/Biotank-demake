@@ -79,6 +79,9 @@ func apply_friction():
 	if velocity.length() < 100:
 		friction_force *= 3
 	acceleration += friction_force
+	
+func take_damage(damageAmount):
+	$StateMachine.call_deferred("takeDamage", damageAmount)
 
 func _on_bump_zone_body_entered(body):
 	if boosting && body.has_method("takeDamage"):

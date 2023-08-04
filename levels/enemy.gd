@@ -39,8 +39,7 @@ func applyForces():
 func doAttack():
 	look_at(target.position)
 	if type == "melee":
-		var state = target.get_node("StateMachine")
-		state.takeDamage(damage)
+		target.take_damage(damage)
 		$AnimationPlayer.play("meleeAttackAnimation")
 	else:
 		var projectile_instance = projectile.instantiate()
