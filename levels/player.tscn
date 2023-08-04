@@ -1,9 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://chxbl7gg23jt2"]
+[gd_scene load_steps=12 format=3 uid="uid://chxbl7gg23jt2"]
 
 [ext_resource type="Script" path="res://levels/player.gd" id="1_wcx5v"]
 [ext_resource type="Texture2D" uid="uid://04yyt1yx2b4l" path="res://resources/tank_top.png" id="2_plydq"]
 [ext_resource type="Texture2D" uid="uid://b0txu1c7ljbex" path="res://resources/tank_bottom.png" id="3_mdjls"]
 [ext_resource type="Material" uid="uid://bmlfipq8v3dtj" path="res://levels/boostsprite.tres" id="4_yf1rt"]
+[ext_resource type="Script" path="res://states/PlayerStateMachine.gd" id="5_32l40"]
+[ext_resource type="Script" path="res://states/invincible.gd" id="6_angur"]
+[ext_resource type="Script" path="res://states/default.gd" id="7_pl0up"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d0stc"]
 size = Vector2(33, 33)
@@ -59,6 +62,16 @@ position = Vector2(-7, 0)
 shape = SubResource("CircleShape2D_vmpi2")
 
 [node name="BloodLustTimer" type="Timer" parent="."]
+
+[node name="StateMachine" type="Node" parent="."]
+script = ExtResource("5_32l40")
+initial_state = NodePath("default")
+
+[node name="invincible" type="Node" parent="StateMachine"]
+script = ExtResource("6_angur")
+
+[node name="default" type="Node" parent="StateMachine"]
+script = ExtResource("7_pl0up")
 
 [connection signal="body_entered" from="BumpZone" to="." method="_on_bump_zone_body_entered"]
 [connection signal="timeout" from="BloodLustTimer" to="." method="_on_blood_lust_timer_timeout"]

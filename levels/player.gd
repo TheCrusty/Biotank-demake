@@ -1,3 +1,4 @@
+class_name Player
 extends CharacterBody2D
 
 @export var max_speed = 14450.0
@@ -69,8 +70,8 @@ func _physics_process(delta):
 	$TankTopPivot.look_at(get_global_mouse_position())
 	move_and_slide()
 	
-func takeDamage(damageAmount):
-	current_kill_combo_count -= 1
+#func takeDamage(damageAmount):
+#	current_kill_combo_count -= 1
 
 func apply_friction():
 	#fully stops at low speeds
