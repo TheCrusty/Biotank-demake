@@ -5,6 +5,7 @@ extends Node
 # Reference to the state machine, to call its `transition_to()` method directly.
 var state_machine = null
 
+var cant_leave = false
 
 # Virtual function. Receives events from the `_unhandled_input()` callback.
 func handle_input(_event: InputEvent) -> void:

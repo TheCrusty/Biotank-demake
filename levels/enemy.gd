@@ -47,28 +47,20 @@ func doAttack():
 		owner.add_child(projectile_instance)
 		projectile_instance.onFired(global_transform)
 
-func takeDamage(amountDamage):
-	if health > 0:
-		health = health - amountDamage
-		if(health <= 0):
-			$StateMachine.transition_to("Death")
+func takeDamage(damageAmount):
+	$StateMachine.takeDamage(damageAmount)
 
 func _on_vision_sphere_area_entered(area):
-	if area != null && area.get_parent().name == "Player":
-		target = area.get_parent()
-		playerInSight = true
+	$StateMachine.vision_sphere_area_entered(area)
 
 func _on_vision_sphere_area_exited(area):
-	if area != null && area.get_parent().name == "Player":
-		playerInSight = false
+	$StateMachine.vision_sphere_area_exited(area)
 
 func _on_attack_range_body_entered(body):
-	if body != null && body.name == "Player":
-		inAttackRange = true
+	$StateMachine.attack_range_body_entered(body)
 
 func _on_attack_range_body_exited(body):
-	if body != null && body.name == "Player":
-		inAttackRange = false
+	$StateMachine.attack_range_body_exited(body)
 
 func _on_attack_timer_timeout():
 	doAttack()

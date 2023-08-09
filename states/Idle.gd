@@ -1,8 +1,6 @@
 # Idle.gd
 extends EnemyState
 
-
-func update(delta):
-	super.update(delta)
-	if enemy.playerInSight:
-		state_machine.transition_to("Seek")
+func handle_vision_sphere_area_entered(area):
+	super.handle_vision_sphere_area_entered(area)
+	state_machine.transition_to("Seek")

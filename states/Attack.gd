@@ -8,11 +8,14 @@ func ready():
 
 func update(delta):
 	super.update(delta)
-	if(!enemy.inAttackRange):
-		state_machine.transition_to("Seek")
-	
+
 func enter(_msg := {}):
 	AttackTimer.start()
 
 func exit():
 	AttackTimer.stop()
+	enemy.get_node("AnimationPlayer").stop()
+
+func handle_attack_range_body_exited(body):
+	super.handle_attack_range_body_exited(body)
+	state_machine.transition_to("Seek")
