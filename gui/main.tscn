@@ -1,16 +1,16 @@
 [gd_scene load_steps=3 format=3 uid="uid://duo8sqtx55khb"]
 
-[ext_resource type="Script" path="res://main_menu.gd" id="1_nwtxx"]
-[ext_resource type="Texture2D" uid="uid://c4xwygo1tlmb0" path="res://resources/Desert2.jpg" id="1_oy8dp"]
+[ext_resource type="Script" path="res://gui/main_menu.gd" id="1_q66a4"]
+[ext_resource type="Texture2D" uid="uid://c4xwygo1tlmb0" path="res://resources/Desert2.jpg" id="2_ued12"]
 
 [node name="main_menu" type="Node2D"]
 position = Vector2(566, 326)
-script = ExtResource("1_nwtxx")
+script = ExtResource("1_q66a4")
 
 [node name="bg" type="Sprite2D" parent="."]
 position = Vector2(11, 2)
 scale = Vector2(3.4, 2.32995)
-texture = ExtResource("1_oy8dp")
+texture = ExtResource("2_ued12")
 
 [node name="PlayButton" type="Button" parent="."]
 offset_left = -102.0
