@@ -12,7 +12,7 @@ var externalForce = Vector2.ZERO
 var seekMovement = Vector2.ZERO
 
 var target
-var projectile = preload("res://levels/enemy_projectile.tscn")
+var projectile = preload("res://enemy/enemy_projectile.tscn")
 var playerInSight = false
 var inAttackRange = false
 
