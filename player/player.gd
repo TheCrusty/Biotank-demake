@@ -19,6 +19,8 @@ var max_zoom = 1.15
 var boosting = false
 var current_kill_combo_count = 0.0
 var max_kill_combo_count = 5.0
+var current_health = 5;
+var max_health = 5;
 signal enemy_death
 
 func _enemy_death_handler():

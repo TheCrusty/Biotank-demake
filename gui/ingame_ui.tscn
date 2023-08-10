@@ -6,12 +6,22 @@
 script = ExtResource("1_tdrp0")
 
 [node name="BoostBar" type="ProgressBar" parent="."]
-modulate = Color(0.827451, 0.870588, 0, 1)
-offset_left = 5.0
+modulate = Color(1, 0.92549, 0.0901961, 1)
+offset_left = 11.0
 offset_top = 597.0
-offset_right = 312.0
+offset_right = 318.0
 offset_bottom = 639.0
+value = 50.0
 show_percentage = false
+
+[node name="BoostBarLabel" type="Label" parent="BoostBar"]
+offset_left = 124.0
+offset_top = 8.0
+offset_right = 206.0
+offset_bottom = 34.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "Boost"
 
 [node name="BloodLustBar" type="ProgressBar" parent="."]
 modulate = Color(1, 0, 0, 1)
@@ -22,16 +32,29 @@ offset_bottom = 640.0
 value = 50.0
 show_percentage = false
 
-[node name="BoostBarLabel" type="Label" parent="."]
-offset_left = 5.0
-offset_top = 571.0
-offset_right = 87.0
-offset_bottom = 597.0
-text = "Boost Bar"
+[node name="BloodLustBarLabel" type="Label" parent="BloodLustBar"]
+offset_left = 112.0
+offset_top = 8.0
+offset_right = 261.0
+offset_bottom = 50.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "Blood Lust"
 
-[node name="BloodLustBarLabel" type="Label" parent="."]
-offset_left = 837.0
-offset_top = 571.0
-offset_right = 986.0
-offset_bottom = 613.0
-text = "BloodLust Bar"
+[node name="HealthBar" type="ProgressBar" parent="."]
+modulate = Color(0.372549, 0.823529, 0.168627, 1)
+offset_left = 414.0
+offset_top = 596.0
+offset_right = 721.0
+offset_bottom = 638.0
+value = 50.0
+show_percentage = false
+
+[node name="HealthBarLabel" type="Label" parent="HealthBar"]
+offset_left = 129.0
+offset_top = 8.0
+offset_right = 278.0
+offset_bottom = 50.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.0627451, 0.0627451, 0.0627451, 1)
+text = "Health"

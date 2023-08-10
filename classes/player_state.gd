@@ -19,3 +19,4 @@ func ready():
 	
 func takeDamage(damageAmount):
 	player.current_kill_combo_count -= 1
+	player.current_health -= damageAmount
