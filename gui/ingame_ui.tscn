@@ -15,6 +15,7 @@ value = 50.0
 show_percentage = false
 
 [node name="BoostBarLabel" type="Label" parent="BoostBar"]
+layout_mode = 0
 offset_left = 124.0
 offset_top = 8.0
 offset_right = 206.0
@@ -33,6 +34,7 @@ value = 50.0
 show_percentage = false
 
 [node name="BloodLustBarLabel" type="Label" parent="BloodLustBar"]
+layout_mode = 0
 offset_left = 112.0
 offset_top = 8.0
 offset_right = 261.0
@@ -51,6 +53,7 @@ value = 50.0
 show_percentage = false
 
 [node name="HealthBarLabel" type="Label" parent="HealthBar"]
+layout_mode = 0
 offset_left = 129.0
 offset_top = 8.0
 offset_right = 278.0
