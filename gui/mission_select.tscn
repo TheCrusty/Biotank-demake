@@ -60,3 +60,4 @@ text = "Back"
 
 [connection signal="pressed" from="Missions/MissionOne" to="." method="_on_mission_one_pressed"]
 [connection signal="pressed" from="Missions/MissionTwo" to="." method="_on_mission_two_pressed"]
+[connection signal="pressed" from="Missions/MissionThree" to="." method="_on_mission_three_pressed"]
