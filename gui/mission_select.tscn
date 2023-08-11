@@ -59,3 +59,4 @@ offset_bottom = 606.0
 text = "Back"
 
 [connection signal="pressed" from="Missions/MissionOne" to="." method="_on_mission_one_pressed"]
+[connection signal="pressed" from="Missions/MissionTwo" to="." method="_on_mission_two_pressed"]

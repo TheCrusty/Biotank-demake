@@ -13,6 +13,7 @@ offset_right = 318.0
 offset_bottom = 639.0
 value = 50.0
 show_percentage = false
+metadata/_edit_use_anchors_ = true
 
 [node name="BoostBarLabel" type="Label" parent="BoostBar"]
 layout_mode = 0
