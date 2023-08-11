@@ -1,0 +1,57 @@
+[gd_scene load_steps=6 format=3 uid="uid://bmlapqs54f5to"]
+
+[ext_resource type="PackedScene" uid="uid://b8y1vgakc4pe8" path="res://player/player.tscn" id="1_3lml8"]
+[ext_resource type="Script" path="res://levels/Camera2D.gd" id="2_inhuo"]
+[ext_resource type="PackedScene" uid="uid://dbjd3834l88vu" path="res://gui/ingame_ui.tscn" id="3_lntyy"]
+[ext_resource type="PackedScene" uid="uid://ddiq7lliqxm0u" path="res://enemy/projectile_enemy.tscn" id="4_7y6b2"]
+[ext_resource type="PackedScene" uid="uid://dyyxfp7qicuri" path="res://enemy/enemy.tscn" id="5_l6cse"]
+
+[node name="level_3" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_3lml8")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+script = ExtResource("2_inhuo")
+
+[node name="ingame_ui" parent="Camera2D" instance=ExtResource("3_lntyy")]
+position = Vector2(-566, -331)
+
+[node name="projectile_enemy" parent="." instance=ExtResource("4_7y6b2")]
+position = Vector2(778, -579)
+scale = Vector2(1.44, 1.44)
+
+[node name="projectile_enemy2" parent="." instance=ExtResource("4_7y6b2")]
+position = Vector2(-663, -579)
+scale = Vector2(1.44, 1.44)
+
+[node name="projectile_enemy3" parent="." instance=ExtResource("4_7y6b2")]
+position = Vector2(778, 425)
+scale = Vector2(1.44, 1.44)
+
+[node name="projectile_enemy4" parent="." instance=ExtResource("4_7y6b2")]
+position = Vector2(-729, 425)
+scale = Vector2(1.44, 1.44)
+
+[node name="Enemy" parent="." instance=ExtResource("5_l6cse")]
+position = Vector2(-592, 445)
+
+[node name="Enemy2" parent="." instance=ExtResource("5_l6cse")]
+position = Vector2(-644, 312)
+
+[node name="Enemy3" parent="." instance=ExtResource("5_l6cse")]
+position = Vector2(664, -385)
+
+[node name="Enemy4" parent="." instance=ExtResource("5_l6cse")]
+position = Vector2(612, -518)
+
+[node name="Enemy5" parent="." instance=ExtResource("5_l6cse")]
+position = Vector2(-630, -432)
+
+[node name="Enemy6" parent="." instance=ExtResource("5_l6cse")]
+position = Vector2(-518, -512)
+
+[node name="Enemy7" parent="." instance=ExtResource("5_l6cse")]
+position = Vector2(616, 391)
+
+[node name="Enemy8" parent="." instance=ExtResource("5_l6cse")]
+position = Vector2(728, 311)
