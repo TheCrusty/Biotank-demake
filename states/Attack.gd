@@ -6,9 +6,6 @@ var AttackTimer
 func ready():
 	AttackTimer = enemy.get_node("AttackTimer")
 
-func update(delta):
-	super.update(delta)
-
 func enter(_msg := {}):
 	AttackTimer.start()
 

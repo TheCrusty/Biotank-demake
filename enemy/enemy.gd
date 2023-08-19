@@ -23,6 +23,7 @@ func _ready():
 	var rng = RandomNumberGenerator.new()
 	$Sprite2D.frame = rng.randi_range(0, 3)
 	$AttackTimer.wait_time = attackDelay
+	
 	await owner.ready
 	var player_node = get_parent().get_node("Player")
 	connect("enemy_death",Callable(player_node,"_enemy_death_handler"))

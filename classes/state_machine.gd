@@ -40,6 +40,7 @@ func _physics_process(delta: float) -> void:
 func transition_to(target_state_name: String, msg: Dictionary = {}) -> void:
 	if not has_node(target_state_name) or state.cant_leave:
 		return
+	
 	state.exit()
 	state = get_node(target_state_name)
 	state.enter(msg)
