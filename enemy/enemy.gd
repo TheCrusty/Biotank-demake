@@ -25,8 +25,8 @@ func _ready():
 	$AttackTimer.wait_time = attackDelay
 	
 	await owner.ready
-	var player_node = get_parent().get_node("Player")
-	connect("enemy_death",Callable(player_node,"_enemy_death_handler"))
+	var player_node = owner.get_node("Player")
+	connect("enemy_death", Callable(player_node,"_enemy_death_handler"))
 
 func applyForces():
 	#Shrinks the value of an applied external force over time kind of like LERP

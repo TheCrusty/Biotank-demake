@@ -33,7 +33,7 @@ func takeDamage(damageAmount):
 			state_machine.transition_to("Death")
 
 func handle_vision_sphere_area_entered(area):
-	enemy.target = area.get_parent()
+	enemy.target = area.owner
 	enemy.playerInSight = true
 
 func handle_vision_sphere_area_exited(area):
