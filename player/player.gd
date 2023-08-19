@@ -1,26 +1,33 @@
 class_name Player
 extends CharacterBody2D
 
-@export var max_speed = 14450.0
-@export var damper = 0.015
-@export var rotation_speed = 3
+# Engine Properties
 @export var boost_depletion_rate = 2000
 @export var total_boost_amount = 3000
-@export var bump_damage = 5
 var current_boost_amount = 3000
 var engine_power = 800
 var boost_power = 400
 var current_boost = 0
+var boosting = false
+
+# Physics Properties
+@export var max_speed = 14450.0
+@export var damper = 0.015
+@export var rotation_speed = 3
 var acceleration = Vector2.ZERO
 var friction = -2
-var projectile = preload("res://levels/projectile.tscn")
 var rotation_direction = 0
-var max_zoom = 1.15
-var boosting = false
+
+# Game Properties
+@export var bump_damage = 5
 var current_kill_combo_count = 0.0
 var max_kill_combo_count = 5.0
 var current_health = 5;
 var max_health = 5;
+
+# Others
+var projectile = preload("res://levels/projectile.tscn")
+var max_zoom = 1.15
 signal enemy_death
 
 func _enemy_death_handler():
