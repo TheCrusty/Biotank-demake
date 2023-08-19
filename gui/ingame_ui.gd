@@ -5,7 +5,7 @@ var player
 func _ready():
 	await owner.ready
 	
-	# Makes sure there is a Player node and that it is of type Player
+	# Ensures there is a Player node and that it is of type Player
 	player = owner.get_node("Player") as Player
 	assert(player != null)
 
