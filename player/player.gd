@@ -22,8 +22,8 @@ var rotation_direction = 0
 @export var bump_damage = 5
 var current_kill_combo_count = 0.0
 var max_kill_combo_count = 5.0
-var current_health = 5;
-var max_health = 5;
+var current_health = 5.0;
+var max_health = 5.0;
 
 # Others
 var projectile = preload("res://levels/projectile.tscn")
@@ -90,7 +90,9 @@ func apply_friction():
 	acceleration += friction_force
 	
 func take_damage(damageAmount):
+	print(current_health)
 	$StateMachine.call_deferred("takeDamage", damageAmount)
+	print(current_health)
 
 func _on_bump_zone_body_entered(body):
 	if boosting && body.has_method("takeDamage"):
