@@ -1,7 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://bmlapqs54f5to"]
+[gd_scene load_steps=5 format=3 uid="uid://bmlapqs54f5to"]
 
 [ext_resource type="PackedScene" uid="uid://b8y1vgakc4pe8" path="res://player/player.tscn" id="1_3lml8"]
-[ext_resource type="Script" path="res://levels/Camera2D.gd" id="2_inhuo"]
 [ext_resource type="PackedScene" uid="uid://dbjd3834l88vu" path="res://gui/ingame_ui.tscn" id="3_lntyy"]
 [ext_resource type="PackedScene" uid="uid://ddiq7lliqxm0u" path="res://enemy/projectile_enemy.tscn" id="4_7y6b2"]
 [ext_resource type="PackedScene" uid="uid://dyyxfp7qicuri" path="res://enemy/enemy.tscn" id="5_l6cse"]
@@ -10,8 +9,12 @@
 
 [node name="Player" parent="." instance=ExtResource("1_3lml8")]
 
+[node name="CameraPosition" type="RemoteTransform2D" parent="Player"]
+remote_path = NodePath("../../Camera2D")
+update_rotation = false
+update_scale = false
+
 [node name="Camera2D" type="Camera2D" parent="."]
-script = ExtResource("2_inhuo")
 
 [node name="ingame_ui" parent="Camera2D" instance=ExtResource("3_lntyy")]
 position = Vector2(-566, -331)

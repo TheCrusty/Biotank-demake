@@ -14,6 +14,7 @@ position = Vector2(500, 250)
 [node name="CameraPosition" type="RemoteTransform2D" parent="Player"]
 remote_path = NodePath("../../Camera2D")
 update_rotation = false
+update_scale = false
 
 [node name="Enemy" parent="." instance=ExtResource("2_0r224")]
 position = Vector2(2390, 615)
