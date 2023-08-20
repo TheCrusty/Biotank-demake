@@ -6,6 +6,10 @@
 
 [node name="Node2D" type="Node2D"]
 
+[node name="GUILayer" type="CanvasLayer" parent="."]
+
+[node name="ingame_ui" parent="GUILayer" instance=ExtResource("3_krt87")]
+
 [node name="Player" parent="." instance=ExtResource("1_ql884")]
 position = Vector2(500, 250)
 
@@ -16,9 +20,6 @@ update_scale = false
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(500, 250)
-
-[node name="ingame_ui" parent="Camera2D" instance=ExtResource("3_krt87")]
-position = Vector2(-566, -331)
 
 [node name="projectile_enemy" parent="." instance=ExtResource("4_edw4j")]
 position = Vector2(890, -87)

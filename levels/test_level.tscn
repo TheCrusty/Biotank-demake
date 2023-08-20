@@ -8,6 +8,10 @@
 [node name="test-level" type="Node2D"]
 metadata/_edit_vertical_guides_ = [-86.0]
 
+[node name="GUILayer" type="CanvasLayer" parent="."]
+
+[node name="ingame_ui" parent="GUILayer" instance=ExtResource("5_igyyk")]
+
 [node name="Player" parent="." instance=ExtResource("1_r5h3c")]
 position = Vector2(500, 250)
 
@@ -15,6 +19,9 @@ position = Vector2(500, 250)
 remote_path = NodePath("../../Camera2D")
 update_rotation = false
 update_scale = false
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(500, 250)
 
 [node name="Enemy" parent="." instance=ExtResource("2_0r224")]
 position = Vector2(2390, 615)
@@ -37,9 +44,3 @@ position = Vector2(1926, 470)
 [node name="projectile_enemy" parent="." instance=ExtResource("3_tpgiq")]
 position = Vector2(890, -87)
 scale = Vector2(1.44, 1.44)
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(500, 250)
-
-[node name="ingame_ui" parent="Camera2D" instance=ExtResource("5_igyyk")]
-position = Vector2(-566, -331)

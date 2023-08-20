@@ -7,6 +7,10 @@
 
 [node name="level_3" type="Node2D"]
 
+[node name="GUILayer" type="CanvasLayer" parent="."]
+
+[node name="ingame_ui" parent="GUILayer" instance=ExtResource("3_lntyy")]
+
 [node name="Player" parent="." instance=ExtResource("1_3lml8")]
 
 [node name="CameraPosition" type="RemoteTransform2D" parent="Player"]
@@ -15,9 +19,6 @@ update_rotation = false
 update_scale = false
 
 [node name="Camera2D" type="Camera2D" parent="."]
-
-[node name="ingame_ui" parent="Camera2D" instance=ExtResource("3_lntyy")]
-position = Vector2(-566, -331)
 
 [node name="projectile_enemy" parent="." instance=ExtResource("4_7y6b2")]
 position = Vector2(778, -579)
