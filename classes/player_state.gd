@@ -18,5 +18,9 @@ func ready():
 	pass
 	
 func takeDamage(damageAmount):
-	player.current_kill_combo_count -= 1
-	player.current_health -= damageAmount
+	if player.current_health + damageAmount <= 0:
+		$StateMachine.transition_to("player_death")
+	else:
+		player.current_kill_combo_count -= 1
+		player.current_health -= damageAmount
+	
