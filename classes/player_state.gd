@@ -3,7 +3,6 @@ extends State
 
 var player: Player
 
-
 func _ready():
 	# waits for owner to ready first
 	await owner.ready
@@ -19,7 +18,7 @@ func ready():
 	
 func takeDamage(damageAmount):
 	if player.current_health + damageAmount <= 0:
-		$StateMachine.transition_to("player_death")
+		get_tree().change_scene_to_file("res://GUI/game_over_menu.tscn")
 	else:
 		player.current_kill_combo_count -= 1
 		player.current_health -= damageAmount

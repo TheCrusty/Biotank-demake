@@ -27,6 +27,7 @@ var max_health = 5.0
 
 # Others
 var projectile = preload("res://levels/projectile.tscn")
+var death_scene = preload("res://GUI/game_over_menu.tscn").instantiate()
 var max_zoom = 1.15
 var Camera = null
 signal enemy_death
