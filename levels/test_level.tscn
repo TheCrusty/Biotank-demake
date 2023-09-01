@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://mkxv4v137fon"]
+[gd_scene load_steps=6 format=3 uid="uid://mkxv4v137fon"]
 
 [ext_resource type="PackedScene" uid="uid://b8y1vgakc4pe8" path="res://player/player.tscn" id="1_r5h3c"]
 [ext_resource type="PackedScene" uid="uid://dyyxfp7qicuri" path="res://enemy/enemy.tscn" id="2_0r224"]
 [ext_resource type="PackedScene" uid="uid://ddiq7lliqxm0u" path="res://enemy/projectile_enemy.tscn" id="3_tpgiq"]
-[ext_resource type="PackedScene" uid="uid://dbjd3834l88vu" path="res://GUI/ingame_ui.tscn" id="5_igyyk"]
+[ext_resource type="PackedScene" uid="uid://dbjd3834l88vu" path="res://gui/ingame_ui.tscn" id="5_igyyk"]
+[ext_resource type="PackedScene" uid="uid://di6vmryle7epv" path="res://classes/victory_state.tscn" id="5_s5322"]
 
 [node name="test-level" type="Node2D"]
 metadata/_edit_vertical_guides_ = [-86.0]
@@ -44,3 +45,5 @@ position = Vector2(1926, 470)
 [node name="projectile_enemy" parent="." instance=ExtResource("3_tpgiq")]
 position = Vector2(890, -87)
 scale = Vector2(1.44, 1.44)
+
+[node name="VictoryState" parent="." instance=ExtResource("5_s5322")]

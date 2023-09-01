@@ -5,7 +5,7 @@ func ready():
 	cant_leave = true
 
 func enter(_msg := {}):
-	enemy.emit_signal("enemy_death")
+	EventBus.emit_signal("enemy_death")
 	enemy.get_node("CollisionShape").set_deferred("disabled", true)
 	enemy.get_node("AttackRange").set_monitoring(false)
 	enemy.get_node("VisionSphere").set_monitoring(false)

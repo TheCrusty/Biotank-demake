@@ -15,6 +15,10 @@ run/main_scene="res://gui/mission_select.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+EventBus="*res://singletons/event_bus.gd"
+
 [input]
 
 Forward={

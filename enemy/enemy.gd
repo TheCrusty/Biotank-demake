@@ -17,7 +17,6 @@ var playerInSight = false
 var inAttackRange = false
 
 
-signal enemy_death
 
 func _ready():
 	var rng = RandomNumberGenerator.new()
@@ -26,7 +25,6 @@ func _ready():
 	
 	await owner.ready
 	var player_node = owner.get_node("Player")
-	connect("enemy_death", Callable(player_node,"_enemy_death_handler"))
 
 func applyForces():
 	#Shrinks the value of an applied external force over time kind of like LERP

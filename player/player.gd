@@ -30,7 +30,7 @@ var projectile = preload("res://levels/projectile.tscn")
 var death_scene = preload("res://GUI/game_over_menu.tscn").instantiate()
 var max_zoom = 1.15
 var Camera = null
-signal enemy_death
+
 
 func _enemy_death_handler():
 	if $BloodLustTimer.is_stopped():
@@ -44,6 +44,7 @@ func _ready():
 	$BoostParticles.emitting = false
 	await owner.ready
 	Camera = owner.get_node("Camera2D")
+	EventBus.enemy_death.connect(_enemy_death_handler)
 	
 func get_input(delta):
 	if Input.is_action_pressed("Boost") and current_boost_amount > 0:
