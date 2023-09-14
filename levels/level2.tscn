@@ -1,10 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://b52hqifp18wec"]
+[gd_scene load_steps=5 format=3 uid="uid://b52hqifp18wec"]
 
+[ext_resource type="Texture2D" uid="uid://ba6vqm1eqm565" path="res://resources/background_3.png" id="1_72veo"]
 [ext_resource type="PackedScene" uid="uid://b8y1vgakc4pe8" path="res://player/player.tscn" id="1_ql884"]
 [ext_resource type="PackedScene" uid="uid://dbjd3834l88vu" path="res://gui/ingame_ui.tscn" id="3_krt87"]
 [ext_resource type="PackedScene" uid="uid://ddiq7lliqxm0u" path="res://enemy/projectile_enemy.tscn" id="4_edw4j"]
 
 [node name="Node2D" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(313, 208)
+scale = Vector2(2, 2)
+texture = ExtResource("1_72veo")
 
 [node name="GUILayer" type="CanvasLayer" parent="."]
 

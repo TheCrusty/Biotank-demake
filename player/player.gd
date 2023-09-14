@@ -43,6 +43,7 @@ func _enemy_death_handler():
 func _ready():
 	$BoostParticles.emitting = false
 	await owner.ready
+	#var CameraPivot = get_node("CameraPosition")
 	Camera = owner.get_node("Camera2D")
 	EventBus.enemy_death.connect(_enemy_death_handler)
 	
