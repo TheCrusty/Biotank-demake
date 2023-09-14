@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://b52hqifp18wec"]
+[gd_scene load_steps=6 format=3 uid="uid://b52hqifp18wec"]
 
 [ext_resource type="Texture2D" uid="uid://ba6vqm1eqm565" path="res://resources/background_3.png" id="1_72veo"]
 [ext_resource type="PackedScene" uid="uid://b8y1vgakc4pe8" path="res://player/player.tscn" id="1_ql884"]
-[ext_resource type="PackedScene" uid="uid://dbjd3834l88vu" path="res://gui/ingame_ui.tscn" id="3_krt87"]
+[ext_resource type="PackedScene" uid="uid://dbjd3834l88vu" path="res://GUI/ingame_ui.tscn" id="3_krt87"]
+[ext_resource type="Script" path="res://levels/CameraPosition.gd" id="4_1qyxb"]
 [ext_resource type="PackedScene" uid="uid://ddiq7lliqxm0u" path="res://enemy/projectile_enemy.tscn" id="4_edw4j"]
 
 [node name="Node2D" type="Node2D"]
@@ -23,6 +24,7 @@ position = Vector2(500, 250)
 remote_path = NodePath("../../Camera2D")
 update_rotation = false
 update_scale = false
+script = ExtResource("4_1qyxb")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(500, 250)
