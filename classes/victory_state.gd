@@ -2,7 +2,7 @@
 class_name VictoryState
 extends Node
 
-var targetKillCount = 3
+@export var targetKillCount = 7
 var currentKillCount = 0
 
 func _ready():
@@ -17,5 +17,4 @@ func checkVictory():
 
 func _enemy_death_handler():
 	currentKillCount += 1
-	print(currentKillCount)
 	checkVictory()
