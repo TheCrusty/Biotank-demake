@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://k6ea5roirtxt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8agy4"]
+size = Vector2(20, 75.253)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rby14"]
+size = Vector2(20, 74.9494)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t7d44"]
+size = Vector2(2189, 1.31579)
+
+[node name="LevelBoundary" type="StaticBody2D"]
+position = Vector2(-194, -501)
+scale = Vector2(1, 19.76)
+
+[node name="WestBorder" type="CollisionShape2D" parent="."]
+position = Vector2(0, 36.9686)
+shape = SubResource("RectangleShape2D_8agy4")
+
+[node name="EastBorder" type="CollisionShape2D" parent="."]
+position = Vector2(2170, 37.0698)
+shape = SubResource("RectangleShape2D_rby14")
+
+[node name="NorthBorder" type="CollisionShape2D" parent="."]
+position = Vector2(1084.5, -0.253038)
+shape = SubResource("RectangleShape2D_t7d44")
+
+[node name="SouthBorder" type="CollisionShape2D" parent="."]
+position = Vector2(1084, 73.9372)
+shape = SubResource("RectangleShape2D_t7d44")

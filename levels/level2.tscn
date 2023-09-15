@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://b52hqifp18wec"]
+[gd_scene load_steps=7 format=3 uid="uid://b52hqifp18wec"]
 
 [ext_resource type="Texture2D" uid="uid://ba6vqm1eqm565" path="res://resources/background_3.png" id="1_72veo"]
 [ext_resource type="PackedScene" uid="uid://b8y1vgakc4pe8" path="res://player/player.tscn" id="1_ql884"]
 [ext_resource type="PackedScene" uid="uid://dbjd3834l88vu" path="res://GUI/ingame_ui.tscn" id="3_krt87"]
 [ext_resource type="Script" path="res://levels/CameraPosition.gd" id="4_1qyxb"]
 [ext_resource type="PackedScene" uid="uid://ddiq7lliqxm0u" path="res://enemy/projectile_enemy.tscn" id="4_edw4j"]
+[ext_resource type="PackedScene" uid="uid://k6ea5roirtxt" path="res://levels/LevelBoundary.tscn" id="6_3kxg4"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -44,3 +45,7 @@ scale = Vector2(1.44, 1.44)
 [node name="projectile_enemy4" parent="." instance=ExtResource("4_edw4j")]
 position = Vector2(-338, 536)
 scale = Vector2(1.44, 1.44)
+
+[node name="LevelBoundary" parent="." instance=ExtResource("6_3kxg4")]
+visible = true
+position = Vector2(-761, -512)
