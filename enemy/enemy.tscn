@@ -95,8 +95,9 @@ shape = SubResource("RectangleShape2D_qpv0l")
 shape = SubResource("CircleShape2D_52841")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
 position = Vector2(0, -1)
-scale = Vector2(0.1, 0.1)
+scale = Vector2(3, 3)
 texture = ExtResource("2_4sesf")
 hframes = 5
 
