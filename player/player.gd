@@ -49,6 +49,8 @@ func _ready():
 	
 func get_input(delta):
 	if Input.is_action_pressed("Boost") and current_boost_amount > 0:
+		if !$audioBoost.is_playing():
+			$audioBoost.play()
 		current_boost = boost_power
 		boosting = true
 		current_boost_amount -= (boost_depletion_rate/2) * delta
@@ -64,6 +66,7 @@ func get_input(delta):
 		$BoostParticles.emitting = false
 		Camera.zoom.y = 1
 		Camera.zoom.x = 1
+		$audioBoost.stop()
 		
 	$TankBottomPivot/TankBottom.set_modulate(Color(1, current_boost_amount/total_boost_amount, current_boost_amount/total_boost_amount, 1))
 
@@ -72,6 +75,7 @@ func get_input(delta):
 		projectile_instance.shooter = self
 		owner.add_child(projectile_instance)
 		projectile_instance.onFired($TankTopPivot.global_transform)
+		$audioFire.play()
 	else:
 		rotation_direction = Input.get_axis("Rotate_Left", "Rotate_Right")
 		if Input.is_action_pressed("Forward") or Input.is_action_pressed("Reverse"):
@@ -98,6 +102,7 @@ func apply_friction():
 	
 func take_damage(damageAmount):
 	$StateMachine.call_deferred("takeDamage", damageAmount)
+	$audioDamaged.play()
 
 func _on_bump_zone_body_entered(body):
 	if boosting && body.has_method("takeDamage"):
