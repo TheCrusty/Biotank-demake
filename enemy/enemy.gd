@@ -2,27 +2,24 @@ class_name Enemy
 extends CharacterBody2D
 
 @export var health = 5
-@export var speed = 50
+@export var speed = 160
 @export var type = "melee"
-@export var damage = 2
-@export var attackDelay = 2.0
+@export var damage = 0.5
+@export var attackDelay = 0.15
 
 var friction = -2
 var externalForce = Vector2.ZERO
 var seekMovement = Vector2.ZERO
-
 var target
 var projectile = preload("res://enemy/enemy_projectile.tscn")
 var playerInSight = false
 var inAttackRange = false
 
 
-
 func _ready():
-	var rng = RandomNumberGenerator.new()
-	$Sprite2D.frame = rng.randi_range(0, 3)
+	#var rng = RandomNumberGenerator.new()
+	#$Sprite2D.frame = rng.randi_range(0, 3)
 	$AttackTimer.wait_time = attackDelay
-	
 	await owner.ready
 	var player_node = owner.get_node("Player")
 
