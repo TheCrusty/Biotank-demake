@@ -120,6 +120,6 @@ func _on_blood_lust_timer_timeout():
 
 func _on_bump_zone_area_entered(area):
 	print(area.name)
-	if area.name == "DNA":
-		dnaCount += area.value
-		area.queue_free()
+	if area.owner.name == "DNA":
+		dnaCount += area.owner.value
+		area.owner.queue_free()
