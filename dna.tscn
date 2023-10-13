@@ -13,7 +13,7 @@ script = ExtResource("1_fj5ed")
 [node name="DNA" type="Sprite2D" parent="."]
 texture = ExtResource("1_4db2v")
 
-[node name="Area2D" type="Area2D" parent="DNA"]
+[node name="Area2D" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DNA/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CapsuleShape2D_ic6vl")

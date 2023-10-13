@@ -109,10 +109,7 @@ func _on_bump_zone_body_entered(body):
 	if boosting && body.has_method("takeDamage"):
 		body.takeDamage(bump_damage)
 		body.externalForce += velocity/2
-	if body.name == "DNA":
-		dnaCount += body.value
-		body.queue_free()
-	print(body.name)
+	
 
 func _on_blood_lust_timer_timeout():
 	if current_kill_combo_count > 0:
@@ -120,4 +117,9 @@ func _on_blood_lust_timer_timeout():
 	else:
 		$BloodLustTimer.stop()
 		$StateMachine.transition_to("default")
-	
+
+func _on_bump_zone_area_entered(area):
+	print(area.name)
+	if area.name == "DNA":
+		dnaCount += area.value
+		area.queue_free()
