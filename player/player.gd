@@ -9,6 +9,7 @@ var engine_power = 800
 var boost_power = 400
 var current_boost = 0
 var boosting = false
+var dnaCount = 0
 
 # Physics Properties
 @export var max_speed = 14450.0
@@ -108,6 +109,10 @@ func _on_bump_zone_body_entered(body):
 	if boosting && body.has_method("takeDamage"):
 		body.takeDamage(bump_damage)
 		body.externalForce += velocity/2
+	if body.name == "DNA":
+		dnaCount += body.value
+		body.queue_free()
+	print(body.name)
 
 func _on_blood_lust_timer_timeout():
 	if current_kill_combo_count > 0:

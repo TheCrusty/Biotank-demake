@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://chg0882dmiih2"]
+
+[ext_resource type="Texture2D" uid="uid://rlhu224s4oyf" path="res://resources/DNA.png" id="1_4db2v"]
+[ext_resource type="Script" path="res://dna.gd" id="1_fj5ed"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ic6vl"]
+radius = 7.0
+height = 28.0
+
+[node name="DNA" type="Node2D"]
+script = ExtResource("1_fj5ed")
+
+[node name="DNA" type="Sprite2D" parent="."]
+texture = ExtResource("1_4db2v")
+
+[node name="Area2D" type="Area2D" parent="DNA"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DNA/Area2D"]
+shape = SubResource("CapsuleShape2D_ic6vl")
