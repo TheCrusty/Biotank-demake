@@ -8,6 +8,9 @@ func update(delta):
 	enemy.look_at(enemy.target.position)
 	super.update(delta)
 
+func enter(_msg := {}):
+	owner.get_node("Alerted").play()
+
 # sets seekmovement back to zero before leaving seek
 func exit():
 	enemy.seekMovement = Vector2.ZERO

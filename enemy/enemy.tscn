@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dyyxfp7qicuri"]
+[gd_scene load_steps=15 format=3 uid="uid://dyyxfp7qicuri"]
 
 [ext_resource type="Script" path="res://enemy/enemy.gd" id="1_syyi0"]
 [ext_resource type="Texture2D" uid="uid://voqyi5y24f5" path="res://resources/big_bug.png" id="2_vauvd"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://noqq5atvqali" path="res://states/attack.tscn" id="5_8isvj"]
 [ext_resource type="PackedScene" uid="uid://gryp1j4xysh3" path="res://states/death.tscn" id="6_t2kqc"]
 [ext_resource type="PackedScene" uid="uid://di8cejqs8va64" path="res://states/seek.tscn" id="7_cardx"]
+[ext_resource type="AudioStream" uid="uid://b8agefd5rt54x" path="res://resources/sounds/screeech.wav" id="8_rlm82"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qpv0l"]
 size = Vector2(48, 49)
@@ -126,6 +127,9 @@ texture_filter = 1
 position = Vector2(0, -1)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_vauvd")
+
+[node name="Alerted" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_rlm82")
 
 [connection signal="area_entered" from="VisionSphere" to="." method="_on_vision_sphere_area_entered"]
 [connection signal="area_exited" from="VisionSphere" to="." method="_on_vision_sphere_area_exited"]
