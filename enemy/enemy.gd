@@ -14,6 +14,7 @@ var target
 var projectile = preload("res://enemy/enemy_projectile.tscn")
 var playerInSight = false
 var inAttackRange = false
+var drop = preload("res://dna.tscn")
 
 
 func _ready():
