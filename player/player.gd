@@ -9,7 +9,6 @@ var engine_power = 800
 var boost_power = 400
 var current_boost = 0
 var boosting = false
-var dnaCount = 0
 
 # Physics Properties
 @export var max_speed = 14450.0
@@ -121,5 +120,6 @@ func _on_blood_lust_timer_timeout():
 func _on_bump_zone_area_entered(area):
 	print(area.name)
 	if area.owner.name == "DNA":
-		dnaCount += area.owner.value
+		print("added dna")
+		PlayerVariables.dnaCount += area.owner.value
 		area.owner.queue_free()

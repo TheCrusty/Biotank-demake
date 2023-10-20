@@ -1,0 +1,74 @@
+[gd_scene load_steps=2 format=3 uid="uid://b64ot5gcosgqc"]
+
+[ext_resource type="Script" path="res://GUI/dna_screen.gd" id="1_36lfj"]
+
+[node name="DNAScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_36lfj")
+
+[node name="Body" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 111.0
+offset_top = 191.0
+offset_right = 529.0
+offset_bottom = 487.0
+color = Color(0.396078, 0.372549, 0.372549, 1)
+
+[node name="Label" type="Label" parent="Body"]
+layout_mode = 0
+offset_left = 57.0
+offset_top = 16.0
+offset_right = 97.0
+offset_bottom = 39.0
+text = "Body
+"
+
+[node name="Inventory" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 631.0
+offset_top = 179.0
+offset_right = 1021.0
+offset_bottom = 498.0
+color = Color(0.266667, 0.266667, 0.266667, 1)
+
+[node name="Label" type="Label" parent="Inventory"]
+layout_mode = 0
+offset_left = 98.0
+offset_top = 17.0
+offset_right = 233.0
+offset_bottom = 65.0
+text = "Inventory
+"
+
+[node name="DNABar" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="DNABar"]
+layout_mode = 0
+offset_left = 223.0
+offset_top = 44.0
+offset_right = 930.0
+offset_bottom = 117.0
+color = Color(0.309804, 0.309804, 0.309804, 1)
+
+[node name="DNAMeter" type="ProgressBar" parent="DNABar"]
+layout_mode = 2
+offset_left = 321.0
+offset_top = 54.0
+offset_right = 892.0
+offset_bottom = 110.0
+
+[node name="Label" type="Label" parent="DNABar"]
+layout_mode = 0
+offset_left = 250.0
+offset_top = 64.0
+offset_right = 290.0
+offset_bottom = 90.0
+text = "DNA"

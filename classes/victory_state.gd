@@ -9,7 +9,7 @@ func _ready():
 	EventBus.enemy_death.connect(_enemy_death_handler)
 
 func triggerVictory():
-	get_tree().change_scene_to_file("res://GUI/mission_victory_menu.tscn")
+	get_tree().change_scene_to_file("res://GUI/dna_screen.tscn")
 
 func checkVictory():
 	if currentKillCount >= targetKillCount:
