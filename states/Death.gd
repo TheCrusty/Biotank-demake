@@ -6,11 +6,19 @@ func ready():
 
 func enter(_msg := {}):
 	EventBus.emit_signal("enemy_death")
+	
+	# Disable settings.
 	enemy.get_node("CollisionShape").set_deferred("disabled", true)
 	enemy.get_node("AttackRange").set_monitoring(false)
 	enemy.get_node("VisionSphere").set_monitoring(false)
+
+	# Drop DNA on death.
+	var drop_instance = enemy.drop.instantiate()
+	drop_instance.position = enemy.position
+	get_parent().add_child(drop_instance)
+	
 	# No death sprite yet.
-	#enemy.get_node("Sprite2D").frame = 4
+	# enemy.get_node("Sprite2D").frame = 4
 
 func handle_vision_sphere_area_entered(area):
 	pass

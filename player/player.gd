@@ -109,7 +109,6 @@ func _on_bump_zone_body_entered(body):
 		body.takeDamage(bump_damage)
 		body.externalForce += velocity/2
 	
-
 func _on_blood_lust_timer_timeout():
 	if current_kill_combo_count > 0:
 		current_kill_combo_count -= 1
@@ -120,6 +119,7 @@ func _on_blood_lust_timer_timeout():
 func _on_bump_zone_area_entered(area):
 	print(area.name)
 	if area.owner.name == "DNA":
-		print("added dna")
+
 		PlayerVariables.dnaCount += area.owner.value
 		area.owner.queue_free()
+		area.owner.pickup()
