@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://b64ot5gcosgqc"]
+[gd_scene load_steps=3 format=3 uid="uid://b64ot5gcosgqc"]
 
 [ext_resource type="Script" path="res://GUI/dna_screen.gd" id="1_36lfj"]
+[ext_resource type="PackedScene" uid="uid://ch7x5jqlk401n" path="res://elements/test_item.tscn" id="2_qaar6"]
 
 [node name="DNAScreen" type="Control"]
 layout_mode = 3
@@ -9,6 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 script = ExtResource("1_36lfj")
 
 [node name="Body" type="ColorRect" parent="."]
@@ -17,6 +19,7 @@ offset_left = 111.0
 offset_top = 191.0
 offset_right = 529.0
 offset_bottom = 487.0
+mouse_filter = 1
 color = Color(0.396078, 0.372549, 0.372549, 1)
 
 [node name="Label" type="Label" parent="Body"]
@@ -34,6 +37,7 @@ offset_left = 631.0
 offset_top = 179.0
 offset_right = 1021.0
 offset_bottom = 498.0
+mouse_filter = 1
 color = Color(0.266667, 0.266667, 0.266667, 1)
 
 [node name="Label" type="Label" parent="Inventory"]
@@ -49,6 +53,7 @@ text = "Inventory
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+mouse_filter = 1
 
 [node name="ColorRect" type="ColorRect" parent="DNABar"]
 layout_mode = 0
@@ -72,3 +77,6 @@ offset_top = 64.0
 offset_right = 290.0
 offset_bottom = 90.0
 text = "DNA"
+
+[node name="TestItem" parent="." instance=ExtResource("2_qaar6")]
+position = Vector2(696, 265)
