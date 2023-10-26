@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://bov1usnoi1mnc"]
+[gd_scene load_steps=3 format=3 uid="uid://bov1usnoi1mnc"]
 
 [ext_resource type="Script" path="res://Components/scripts/grid.gd" id="1_bl44b"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_panna"]
 
 [node name="Grid" type="Control"]
 layout_mode = 3
@@ -10,3 +12,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_bl44b")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_panna")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

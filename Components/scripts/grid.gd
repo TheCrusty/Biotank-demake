@@ -15,3 +15,20 @@ func _ready():
 			currentBox.position.x = (60 * j)
 			self.add_child(currentBox)
 			index.append(currentBox)
+	$Area2D/CollisionShape2D.shape.size.x = width * 60
+	$Area2D/CollisionShape2D.shape.size.y = height * 60
+	$Area2D.position.x = width * 30
+	$Area2D.position.y = height * 30
+
+func findNearestTile(position):
+	pass
+
+
+func _on_area_2d_body_entered(body):
+	if(body.name == "TestItem"):
+		body.overGrid = owner
+
+
+func _on_area_2d_body_exited(body):
+	if(body.name == "TestItem"):
+		body.overGrid = null

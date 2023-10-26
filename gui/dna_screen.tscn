@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://b64ot5gcosgqc"]
+[gd_scene load_steps=4 format=3 uid="uid://b64ot5gcosgqc"]
 
 [ext_resource type="Script" path="res://GUI/dna_screen.gd" id="1_36lfj"]
+[ext_resource type="PackedScene" uid="uid://bov1usnoi1mnc" path="res://Components/grid.tscn" id="2_ffusr"]
 [ext_resource type="PackedScene" uid="uid://ch7x5jqlk401n" path="res://elements/test_item.tscn" id="2_qaar6"]
 
 [node name="DNAScreen" type="Control"]
@@ -30,6 +31,9 @@ offset_right = 34.0
 offset_bottom = -4.0
 text = "Body
 "
+
+[node name="Grid" parent="Body" instance=ExtResource("2_ffusr")]
+layout_mode = 1
 
 [node name="Inventory" type="ColorRect" parent="."]
 layout_mode = 0
