@@ -24,10 +24,10 @@ color = Color(0.396078, 0.372549, 0.372549, 1)
 
 [node name="Label" type="Label" parent="Body"]
 layout_mode = 0
-offset_left = 57.0
-offset_top = 16.0
-offset_right = 97.0
-offset_bottom = 39.0
+offset_left = -6.0
+offset_top = -30.0
+offset_right = 34.0
+offset_bottom = -4.0
 text = "Body
 "
 
@@ -42,12 +42,20 @@ color = Color(0.266667, 0.266667, 0.266667, 1)
 
 [node name="Label" type="Label" parent="Inventory"]
 layout_mode = 0
-offset_left = 98.0
-offset_top = 17.0
-offset_right = 233.0
-offset_bottom = 65.0
+offset_left = -8.0
+offset_top = -29.0
+offset_right = 127.0
+offset_bottom = 19.0
 text = "Inventory
 "
+
+[node name="ItemList" type="ItemList" parent="Inventory"]
+layout_mode = 0
+offset_right = 387.0
+offset_bottom = 318.0
+item_count = 2
+item_0/text = "test1"
+item_1/text = "test2"
 
 [node name="DNABar" type="Control" parent="."]
 anchors_preset = 0
@@ -79,4 +87,4 @@ offset_bottom = 90.0
 text = "DNA"
 
 [node name="TestItem" parent="." instance=ExtResource("2_qaar6")]
-position = Vector2(696, 265)
+position = Vector2(1153, 194)
