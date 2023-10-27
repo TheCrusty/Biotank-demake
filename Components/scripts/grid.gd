@@ -24,12 +24,15 @@ func _ready():
 
 func findNearestTile(itemPosition):
 	var smallestDistance = 10000000
-	var winningTile = null
+	var winningTilePosition = null
 	for currentTile in index:
-		if currentTile.global_position.distance_to(itemPosition) <= smallestDistance:
-			smallestDistance = currentTile.global_position.distance_to(itemPosition)
-			winningTile = currentTile
-	return winningTile.global_position
+		var currentTilePosition = currentTile.global_position
+		currentTilePosition.x += 25
+		currentTilePosition.y += 25
+		if currentTilePosition.distance_to(itemPosition) <= smallestDistance:
+			smallestDistance = currentTilePosition.distance_to(itemPosition)
+			winningTilePosition = currentTilePosition
+	return winningTilePosition
 
 func _on_area_2d_area_entered(area):
 	print(area.owner.owner.name)
