@@ -38,9 +38,7 @@ func _on_area_2d_area_entered(area):
 	print(area.owner.owner.name)
 	if(area.owner.owner.name == "TestItem"):
 		area.owner.overGrid = self
-		print("entered")
 
 func _on_area_2d_area_exited(area):
 	if(area.owner.owner.name == "TestItem"):
 		area.owner.overGrid = null
-		print("exited")

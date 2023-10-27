@@ -15,7 +15,6 @@ func _on_area_2d_input_event(viewport, event, shape_idx):
 			dragging = false
 			if(overGrid == null):
 				owner.global_position = lastPosition
-				print("I don't believe it")
 			else:
 				#if(overGrid.has_method("findNearestTile")):
 				owner.global_position = overGrid.findNearestTile(owner.global_position)
