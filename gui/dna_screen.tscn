@@ -53,6 +53,7 @@ text = "Inventory
 layout_mode = 0
 offset_right = 387.0
 offset_bottom = 318.0
+mouse_filter = 1
 item_count = 2
 item_0/text = "test1"
 item_1/text = "test2"

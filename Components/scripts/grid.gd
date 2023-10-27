@@ -26,16 +26,16 @@ func findNearestTile(itemPosition):
 	var smallestDistance = 10000000
 	var winningTile = null
 	for currentTile in index:
-		if currentTile.position.distance_to(itemPosition) <= smallestDistance:
-			smallestDistance = currentTile.position.distance_to(itemPosition)
+		if currentTile.global_position.distance_to(itemPosition) <= smallestDistance:
+			smallestDistance = currentTile.global_position.distance_to(itemPosition)
 			winningTile = currentTile
-	return winningTile.position
+	return winningTile.global_position
 
 func _on_area_2d_area_entered(area):
 	print(area.owner.owner.name)
 	if(area.owner.owner.name == "TestItem"):
 		area.owner.overGrid = self
-		print(area.owner.overGrid)
+		print("entered")
 
 func _on_area_2d_area_exited(area):
 	if(area.owner.owner.name == "TestItem"):

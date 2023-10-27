@@ -6,7 +6,7 @@ var lastPosition
 
 func _process(delta):
 	if dragging:
-		owner.position = get_global_mouse_position()
+		owner.global_position = get_global_mouse_position()
 
 
 func _on_area_2d_input_event(viewport, event, shape_idx):
@@ -14,12 +14,12 @@ func _on_area_2d_input_event(viewport, event, shape_idx):
 		if dragging:
 			dragging = false
 			if(overGrid == null):
-				position = lastPosition
+				owner.global_position = lastPosition
 				print("I don't believe it")
 			else:
 				#if(overGrid.has_method("findNearestTile")):
-				overGrid.findNearestTile(position)
-				lastPosition = position
+				owner.global_position = overGrid.findNearestTile(owner.global_position)
+				lastPosition = owner.global_position
 		else:
 			dragging = true
-			lastPosition = position
+			lastPosition = owner.global_position
