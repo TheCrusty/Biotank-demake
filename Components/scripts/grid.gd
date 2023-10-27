@@ -13,22 +13,31 @@ func _ready():
 			currentBox.size.y = 50
 			currentBox.position.y = (60 * i)
 			currentBox.position.x = (60 * j)
+			currentBox.set_mouse_filter(Control.MOUSE_FILTER_PASS)
 			self.add_child(currentBox)
 			index.append(currentBox)
 	$Area2D/CollisionShape2D.shape.size.x = width * 60
 	$Area2D/CollisionShape2D.shape.size.y = height * 60
 	$Area2D.position.x = width * 30
 	$Area2D.position.y = height * 30
+	
 
-func findNearestTile(position):
-	pass
+func findNearestTile(itemPosition):
+	var smallestDistance = 10000000
+	var winningTile = null
+	for currentTile in index:
+		if currentTile.position.distance_to(itemPosition) <= smallestDistance:
+			smallestDistance = currentTile.position.distance_to(itemPosition)
+			winningTile = currentTile
+	return winningTile.position
 
+func _on_area_2d_area_entered(area):
+	print(area.owner.owner.name)
+	if(area.owner.owner.name == "TestItem"):
+		area.owner.overGrid = self
+		print(area.owner.overGrid)
 
-func _on_area_2d_body_entered(body):
-	if(body.name == "TestItem"):
-		body.overGrid = owner
-
-
-func _on_area_2d_body_exited(body):
-	if(body.name == "TestItem"):
-		body.overGrid = null
+func _on_area_2d_area_exited(area):
+	if(area.owner.owner.name == "TestItem"):
+		area.owner.overGrid = null
+		print("exited")
