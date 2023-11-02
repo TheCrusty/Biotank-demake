@@ -23,14 +23,6 @@ offset_bottom = 187.0
 text = "Body
 "
 
-[node name="Grid" parent="." instance=ExtResource("2_ffusr")]
-layout_mode = 1
-offset_left = 111.0
-offset_top = 191.0
-offset_right = 111.0
-offset_bottom = 191.0
-mouse_filter = 1
-
 [node name="Inventory" type="ColorRect" parent="."]
 layout_mode = 0
 offset_left = 631.0
@@ -39,6 +31,15 @@ offset_right = 1021.0
 offset_bottom = 498.0
 mouse_filter = 1
 color = Color(0.266667, 0.266667, 0.266667, 1)
+
+[node name="Grid" parent="Inventory" instance=ExtResource("2_ffusr")]
+layout_mode = 1
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 1.0
+offset_bottom = 1.0
+mouse_filter = 1
+height = 6
 
 [node name="Label" type="Label" parent="Inventory"]
 layout_mode = 0
@@ -50,6 +51,7 @@ text = "Inventory
 "
 
 [node name="ItemList" type="ItemList" parent="Inventory"]
+visible = false
 layout_mode = 0
 offset_right = 387.0
 offset_bottom = 318.0
@@ -58,35 +60,53 @@ item_count = 2
 item_0/text = "test1"
 item_1/text = "test2"
 
+[node name="Body" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 110.0
+offset_top = 179.0
+offset_right = 500.0
+offset_bottom = 498.0
+mouse_filter = 1
+color = Color(0.266667, 0.266667, 0.266667, 1)
+
+[node name="Grid" parent="Body" instance=ExtResource("2_ffusr")]
+layout_mode = 1
+offset_left = 3.0
+offset_top = 4.0
+offset_right = 3.0
+offset_bottom = 4.0
+height = 2
+width = 2
+
+[node name="ColorRect" type="ColorRect" parent="Body"]
+layout_mode = 0
+offset_left = 113.0
+offset_top = -135.0
+offset_right = 820.0
+offset_bottom = -62.0
+color = Color(0.309804, 0.309804, 0.309804, 1)
+
+[node name="Label" type="Label" parent="Body"]
+visible = false
+layout_mode = 0
+offset_left = 140.0
+offset_top = -115.0
+offset_right = 180.0
+offset_bottom = -89.0
+text = "DNA"
+
 [node name="DNABar" type="Control" parent="."]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 mouse_filter = 1
 
-[node name="ColorRect" type="ColorRect" parent="DNABar"]
-layout_mode = 0
-offset_left = 223.0
-offset_top = 44.0
-offset_right = 930.0
-offset_bottom = 117.0
-color = Color(0.309804, 0.309804, 0.309804, 1)
-
 [node name="DNAMeter" type="ProgressBar" parent="DNABar"]
 layout_mode = 2
 offset_left = 321.0
-offset_top = 54.0
+offset_top = 55.0
 offset_right = 892.0
-offset_bottom = 110.0
-
-[node name="Label" type="Label" parent="DNABar"]
-visible = false
-layout_mode = 0
-offset_left = 250.0
-offset_top = 64.0
-offset_right = 290.0
-offset_bottom = 90.0
-text = "DNA"
+offset_bottom = 111.0
 
 [node name="TestItem" parent="." instance=ExtResource("2_qaar6")]
-position = Vector2(1153, 194)
+position = Vector2(1021, 91)

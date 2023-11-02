@@ -1,7 +1,7 @@
 extends Control
 
 @export var height = 4
-@export var width = 4
+@export var width = 6
 var index = []
 
 func _ready():
