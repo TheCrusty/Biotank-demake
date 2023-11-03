@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://b64ot5gcosgqc"]
+[gd_scene load_steps=3 format=3 uid="uid://b64ot5gcosgqc"]
 
 [ext_resource type="Script" path="res://GUI/dna_screen.gd" id="1_36lfj"]
+[ext_resource type="PackedScene" uid="uid://4kphslfkq7xa" path="res://items/inventory.tscn" id="2_rh6na"]
 
 [node name="DNAScreen" type="Control"]
 layout_mode = 3
@@ -12,16 +13,16 @@ grow_vertical = 2
 mouse_filter = 1
 script = ExtResource("1_36lfj")
 
-[node name="Inventory" type="ColorRect" parent="."]
+[node name="InventoryBackground" type="ColorRect" parent="."]
 layout_mode = 0
-offset_left = 631.0
+offset_left = 623.0
 offset_top = 179.0
-offset_right = 1021.0
+offset_right = 935.0
 offset_bottom = 498.0
 mouse_filter = 1
 color = Color(0.266667, 0.266667, 0.266667, 1)
 
-[node name="Label" type="Label" parent="Inventory"]
+[node name="Label" type="Label" parent="InventoryBackground"]
 layout_mode = 0
 offset_left = -8.0
 offset_top = -29.0
@@ -34,7 +35,7 @@ text = "Inventory
 layout_mode = 0
 offset_left = 110.0
 offset_top = 179.0
-offset_right = 500.0
+offset_right = 423.0
 offset_bottom = 498.0
 mouse_filter = 1
 color = Color(0.266667, 0.266667, 0.266667, 1)
@@ -76,3 +77,7 @@ offset_left = 321.0
 offset_top = 55.0
 offset_right = 892.0
 offset_bottom = 111.0
+
+[node name="Inventory" parent="." instance=ExtResource("2_rh6na")]
+position = Vector2(-508, -76)
+scale = Vector2(4, 4)

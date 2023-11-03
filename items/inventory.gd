@@ -2,10 +2,13 @@ extends Node2D
 
 const SlotClass = preload("res://items/Slot.gd")
 @onready var inventorySlots = $GridContainer
+@onready var inventorySlots2 = $GridContainer2
 var holdingItem = null
 
 func _ready():
 	for inventorySlot in inventorySlots.get_children():
+		inventorySlot.gui_input.connect(slotGuiInput.bind(inventorySlot))
+	for inventorySlot in inventorySlots2.get_children():
 		inventorySlot.gui_input.connect(slotGuiInput.bind(inventorySlot))
 
 func slotGuiInput(event: InputEvent, slot: SlotClass):
