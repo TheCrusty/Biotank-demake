@@ -35,10 +35,10 @@ func findNearestTile(itemPosition):
 	return winningTilePosition
 
 func _on_area_2d_area_entered(area):
-	print(area.owner.owner.name)
-	if(area.owner.owner.name == "TestItem"):
+	print("am I make it?")
+	if(area.owner.name == "Draggable"):
 		area.owner.overGrid = self
 
 func _on_area_2d_area_exited(area):
-	if(area.owner.owner.name == "TestItem"):
+	if(area.owner.name == "Draggable"):
 		area.owner.overGrid = null

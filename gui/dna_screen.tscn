@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://GUI/dna_screen.gd" id="1_36lfj"]
 [ext_resource type="PackedScene" uid="uid://bov1usnoi1mnc" path="res://Components/grid.tscn" id="2_ffusr"]
-[ext_resource type="PackedScene" uid="uid://ch7x5jqlk401n" path="res://elements/test_item.tscn" id="2_qaar6"]
+[ext_resource type="PackedScene" uid="uid://digkfdg3q8sor" path="res://items/test_gun.tscn" id="4_w8aup"]
 
 [node name="DNAScreen" type="Control"]
 layout_mode = 3
@@ -108,5 +108,5 @@ offset_top = 55.0
 offset_right = 892.0
 offset_bottom = 111.0
 
-[node name="TestItem" parent="." instance=ExtResource("2_qaar6")]
-position = Vector2(1021, 91)
+[node name="TestGun" parent="." instance=ExtResource("4_w8aup")]
+position = Vector2(997, 103)
