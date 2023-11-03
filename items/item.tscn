@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bvqgutu6gs5lb"]
+
+[ext_resource type="Script" path="res://items/Item.gd" id="1_x0gbg"]
+[ext_resource type="Texture2D" uid="uid://dg3j8fgxbblqr" path="res://resources/placeholders/Iron Sword.png" id="2_dqwcw"]
+
+[node name="Item" type="Node2D"]
+script = ExtResource("1_x0gbg")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 16.0
+offset_bottom = 16.0
+mouse_filter = 2
+texture = ExtResource("2_dqwcw")
