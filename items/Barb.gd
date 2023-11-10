@@ -1,5 +1,5 @@
 extends Node2D
-
+var damage = 5
 var active = false
 
 func _ready():
@@ -7,7 +7,5 @@ func _ready():
 
 func activate():
 	active = true
-
-func _process(delta):
-	if active:
-		print("I am now active!")
+	var player = get_parent().get_parent()
+	player.bump_damage = damage + player.bump_damage
