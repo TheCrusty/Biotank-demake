@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dngon46ranmao"
-path="res://.godot/imported/menu_ui.png-498f27ec8334891489ade701fe817e47.ctex"
+uid="uid://bwjdib3kg30xu"
+path="res://.godot/imported/barb.png-4f74f0d9b64dddc6ea08718f761a64db.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://gui/menu_ui.png"
-dest_files=["res://.godot/imported/menu_ui.png-498f27ec8334891489ade701fe817e47.ctex"]
+source_file="res://resources/barb.png"
+dest_files=["res://.godot/imported/barb.png-4f74f0d9b64dddc6ea08718f761a64db.ctex"]
 
 [params]
 

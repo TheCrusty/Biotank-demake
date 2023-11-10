@@ -1,13 +1,13 @@
 [gd_scene load_steps=3 format=3 uid="uid://bvqgutu6gs5lb"]
 
-[ext_resource type="Script" path="res://items/Item.gd" id="1_x0gbg"]
-[ext_resource type="Texture2D" uid="uid://dg3j8fgxbblqr" path="res://resources/placeholders/Iron Sword.png" id="2_dqwcw"]
+[ext_resource type="Script" path="res://items/item.gd" id="1_in71p"]
+[ext_resource type="Texture2D" uid="uid://bwjdib3kg30xu" path="res://resources/barb.png" id="2_4hicy"]
 
 [node name="Item" type="Node2D"]
-script = ExtResource("1_x0gbg")
+script = ExtResource("1_in71p")
 
 [node name="TextureRect" type="TextureRect" parent="."]
-offset_right = 16.0
-offset_bottom = 16.0
+offset_right = 15.0
+offset_bottom = 27.0
 mouse_filter = 2
-texture = ExtResource("2_dqwcw")
+texture = ExtResource("2_4hicy")

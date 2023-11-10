@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://b8y1vgakc4pe8"]
+[gd_scene load_steps=17 format=3 uid="uid://b8y1vgakc4pe8"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_m6368"]
 [ext_resource type="Texture2D" uid="uid://04yyt1yx2b4l" path="res://resources/tank_top.png" id="2_t0t7l"]
@@ -10,6 +10,8 @@
 [ext_resource type="AudioStream" uid="uid://uajxdd8pdwac" path="res://resources/sounds/fire.wav" id="8_pmvid"]
 [ext_resource type="AudioStream" uid="uid://bqdtj0xfifwug" path="res://resources/sounds/boostFinal.wav" id="9_dyrjj"]
 [ext_resource type="AudioStream" uid="uid://cf0n3u7jsf40m" path="res://resources/sounds/hitHurtPlayer.wav" id="9_i4umc"]
+[ext_resource type="PackedScene" uid="uid://btdnxt1co455k" path="res://items/Barb.tscn" id="11_r4lip"]
+[ext_resource type="PackedScene" uid="uid://dwnrxr0uk664y" path="res://items/Cannon.tscn" id="12_guvje"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d0stc"]
 size = Vector2(33, 33)
@@ -85,6 +87,18 @@ stream = ExtResource("9_dyrjj")
 
 [node name="audioDamaged" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("9_i4umc")
+
+[node name="ItemGridContainer" type="GridContainer" parent="."]
+offset_left = -17.0
+offset_top = -16.0
+offset_right = 16.0
+offset_bottom = 18.0
+columns = 3
+
+[node name="Barb" parent="ItemGridContainer" instance=ExtResource("11_r4lip")]
+
+[node name="Cannon" parent="ItemGridContainer" instance=ExtResource("12_guvje")]
+position = Vector2(18, 0)
 
 [connection signal="area_entered" from="BumpZone" to="." method="_on_bump_zone_area_entered"]
 [connection signal="body_entered" from="BumpZone" to="." method="_on_bump_zone_body_entered"]

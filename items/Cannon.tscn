@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://dwnrxr0uk664y"]
+
+[ext_resource type="Script" path="res://items/Cannon.gd" id="1_2xvgk"]
+[ext_resource type="Texture2D" uid="uid://bwjdib3kg30xu" path="res://resources/barb.png" id="2_wkxxc"]
+
+[node name="Cannon" type="Node2D"]
+script = ExtResource("1_2xvgk")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 15.0
+offset_bottom = 27.0
+mouse_filter = 2
+texture = ExtResource("2_wkxxc")

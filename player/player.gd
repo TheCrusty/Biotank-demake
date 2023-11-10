@@ -46,6 +46,7 @@ func _ready():
 	#var CameraPivot = get_node("CameraPosition")
 	Camera = owner.get_node("Camera2D")
 	EventBus.enemy_death.connect(_enemy_death_handler)
+	activate_items()
 	
 func get_input(delta):
 	if Input.is_action_pressed("Boost") and current_boost_amount > 0:
@@ -121,3 +122,7 @@ func _on_bump_zone_area_entered(area):
 		PlayerVariables.dnaCount += area.owner.value
 		area.owner.queue_free()
 		area.owner.pickup()
+		
+func activate_items():
+	for item in $ItemGridContainer.get_children():
+		item.activate()
