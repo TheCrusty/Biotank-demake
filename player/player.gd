@@ -77,6 +77,9 @@ func get_input(delta):
 		owner.add_child(projectile_instance)
 		projectile_instance.onFired($TankTopPivot.global_transform)
 		$audioFire.play()
+		for item in $ItemGridContainer.get_children():
+			if item.has_method("shoot"):
+				item.shoot()
 	else:
 		rotation_direction = Input.get_axis("Rotate_Left", "Rotate_Right")
 		if Input.is_action_pressed("Forward") or Input.is_action_pressed("Reverse"):
@@ -90,6 +93,9 @@ func _physics_process(delta):
 	velocity += acceleration * delta
 	rotation += rotation_direction * rotation_speed * delta
 	$TankTopPivot.look_at(get_global_mouse_position())
+	for item in $ItemGridContainer.get_children():
+		if item.tracksCursor:
+			item.look_at(get_global_mouse_position())
 	move_and_slide()
 
 func apply_friction():

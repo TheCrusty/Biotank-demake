@@ -100,6 +100,9 @@ columns = 3
 [node name="Cannon" parent="ItemGridContainer" instance=ExtResource("12_guvje")]
 position = Vector2(18, 0)
 
+[node name="Cannon2" parent="ItemGridContainer" instance=ExtResource("12_guvje")]
+position = Vector2(9, 0)
+
 [connection signal="area_entered" from="BumpZone" to="." method="_on_bump_zone_area_entered"]
 [connection signal="body_entered" from="BumpZone" to="." method="_on_bump_zone_body_entered"]
 [connection signal="timeout" from="BloodLustTimer" to="." method="_on_blood_lust_timer_timeout"]

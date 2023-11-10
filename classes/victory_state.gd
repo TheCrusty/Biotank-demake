@@ -9,6 +9,9 @@ func _ready():
 	EventBus.enemy_death.connect(_enemy_death_handler)
 
 func triggerVictory():
+	await get_tree().create_timer(2).timeout
+	$victorySound.play()
+	await $victorySound.finished
 	get_tree().change_scene_to_file("res://GUI/dna_screen.tscn")
 
 func checkVictory():
