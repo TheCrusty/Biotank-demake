@@ -1,15 +1,23 @@
 extends Node2D
 
 const SlotClass = preload("res://items/Slot.gd")
+const possibleItems = [
+	preload("res://items/barb.tscn"), 
+	preload("res://items/cannon.tscn")
+] 
+
 @onready var inventorySlots = $GridContainer
 @onready var inventorySlots2 = $GridContainer2
 var holdingItem = null
 
 func _ready():
+	populate_storage_grid()
+	populate_body_grid()
 	for inventorySlot in inventorySlots.get_children():
 		inventorySlot.gui_input.connect(slotGuiInput.bind(inventorySlot))
 	for inventorySlot in inventorySlots2.get_children():
 		inventorySlot.gui_input.connect(slotGuiInput.bind(inventorySlot))
+
 
 func slotGuiInput(event: InputEvent, slot: SlotClass):
 	if event is InputEventMouseButton:
@@ -29,6 +37,25 @@ func slotGuiInput(event: InputEvent, slot: SlotClass):
 				holdingItem = slot.item
 				slot.takeFromSlot()
 				holdingItem.global_position = get_global_mouse_position()
+
+
+func populate_body_grid():
+	var i = 0
+	while i < PlayerVariables.body.size():
+		print(i)
+		if PlayerVariables.body != "Empty":
+			print(PlayerVariables.body)
+		i += 1
+		
+# this will be replaced once we can drop/pickup items.
+func populate_storage_grid():
+	var storageInventory = $GridContainer2
+	for slot in storageInventory.get_children():
+		# We are using size +1 because if our array would go out of bounds we won't put an item.
+		var random = randi() % (possibleItems.size() + 1)
+		if random != possibleItems.size():
+			slot.placeInSlot(possibleItems[random].instantiate())
+
 
 func _input(event):
 	if holdingItem:

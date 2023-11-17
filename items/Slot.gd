@@ -1,12 +1,6 @@
 extends Panel
 
-var ItemClass = preload("res://items/item.tscn")
 var item = null
-
-func _ready():
-	if randi() % 3 == 0:
-		item = ItemClass.instantiate()
-		add_child(item)
 
 func takeFromSlot():
 	remove_child(item)
