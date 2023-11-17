@@ -1,5 +1,6 @@
 extends Node2D
 var damage = 5
+
 var active = false
 var tracksCursor = false
 
