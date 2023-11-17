@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dbjd3834l88vu" path="res://gui/ingame_ui.tscn" id="3_krt87"]
 [ext_resource type="Script" path="res://levels/CameraPosition.gd" id="4_1qyxb"]
 [ext_resource type="PackedScene" uid="uid://ddiq7lliqxm0u" path="res://enemy/projectile_enemy.tscn" id="4_edw4j"]
-[ext_resource type="PackedScene" path="res://levels/LevelBoundary.tscn" id="6_3kxg4"]
+[ext_resource type="PackedScene" uid="uid://k6ea5roirtxt" path="res://levels/LevelBoundary.tscn" id="6_3kxg4"]
 [ext_resource type="PackedScene" uid="uid://di6vmryle7epv" path="res://classes/victory_state.tscn" id="7_rpjs8"]
 
 [node name="Node2D" type="Node2D"]

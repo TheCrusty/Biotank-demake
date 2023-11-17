@@ -1,7 +1,6 @@
-[gd_scene load_steps=17 format=3 uid="uid://b8y1vgakc4pe8"]
+[gd_scene load_steps=16 format=3 uid="uid://b8y1vgakc4pe8"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_m6368"]
-[ext_resource type="Texture2D" uid="uid://04yyt1yx2b4l" path="res://resources/tank_top.png" id="2_t0t7l"]
 [ext_resource type="Texture2D" uid="uid://b0txu1c7ljbex" path="res://resources/tank_bottom.png" id="3_gkc1w"]
 [ext_resource type="Material" uid="uid://bmlfipq8v3dtj" path="res://levels/boostsprite.tres" id="4_ti74e"]
 [ext_resource type="Script" path="res://player/PlayerStateMachine.gd" id="5_gpdq5"]
@@ -29,12 +28,6 @@ collision_mask = 5
 script = ExtResource("1_m6368")
 
 [node name="TankTopPivot" type="Node2D" parent="."]
-
-[node name="TankTop" type="Sprite2D" parent="TankTopPivot"]
-z_index = 1
-position = Vector2(0, 1)
-rotation = 1.5708
-texture = ExtResource("2_t0t7l")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, 0.5)
@@ -99,9 +92,6 @@ columns = 3
 
 [node name="Cannon" parent="ItemGridContainer" instance=ExtResource("12_guvje")]
 position = Vector2(18, 0)
-
-[node name="Cannon2" parent="ItemGridContainer" instance=ExtResource("12_guvje")]
-position = Vector2(9, 0)
 
 [connection signal="area_entered" from="BumpZone" to="." method="_on_bump_zone_area_entered"]
 [connection signal="body_entered" from="BumpZone" to="." method="_on_bump_zone_body_entered"]

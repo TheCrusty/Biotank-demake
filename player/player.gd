@@ -75,7 +75,7 @@ func get_input(delta):
 		var projectile_instance = projectile.instantiate()
 		projectile_instance.shooter = self
 		owner.add_child(projectile_instance)
-		projectile_instance.onFired($TankTopPivot.global_transform)
+		#projectile_instance.onFired($TankTopPivot.global_transform)
 		$audioFire.play()
 		for item in $ItemGridContainer.get_children():
 			if item.has_method("shoot"):
@@ -92,7 +92,7 @@ func _physics_process(delta):
 	apply_friction()
 	velocity += acceleration * delta
 	rotation += rotation_direction * rotation_speed * delta
-	$TankTopPivot.look_at(get_global_mouse_position())
+	#$TankTopPivot.look_at(get_global_mouse_position())
 	for item in $ItemGridContainer.get_children():
 		if item.tracksCursor:
 			item.look_at(get_global_mouse_position())
