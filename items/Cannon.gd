@@ -1,5 +1,7 @@
 extends Node2D
 
+var itemName = "Cannon"
+
 var active = false
 var tracksCursor = true
 var projectile = preload("res://levels/projectile.tscn")

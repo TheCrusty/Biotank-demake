@@ -40,7 +40,7 @@ func slotGuiInput(event: InputEvent, slot: SlotClass):
 
 
 func populate_body_grid():
-	var storageInventory = $GridContainer2
+	var storageInventory = $GridContainer
 	var slots = storageInventory.get_children()
 	var nextFreeSlot = 0
 	for item in PlayerVariables.body:
@@ -48,7 +48,7 @@ func populate_body_grid():
 			print(item)
 			var scene = $ItemLoader.getItemScene(item)
 			slots[nextFreeSlot].placeInSlot(scene)
-			nextFreeSlot += 1
+		nextFreeSlot += 1
 
 		
 # this will be replaced once we can drop/pickup items.

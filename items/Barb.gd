@@ -1,6 +1,8 @@
 extends Node2D
 var damage = 5
 
+var itemName = "Barb"
+
 var active = false
 var tracksCursor = false
 

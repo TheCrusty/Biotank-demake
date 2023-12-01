@@ -12,13 +12,13 @@ func save_inventory():
 	var bodyItemList = []
 	for Slot in $Inventory.get_node("GridContainer").get_children():
 		if Slot.item != null:
-			bodyItemList.append(Slot.item.name)
+			bodyItemList.append(Slot.item.itemName)
 		else:
 			bodyItemList.append("Empty")
 	var inventoryItemList = []
 	for Slot in $Inventory.get_node("GridContainer2").get_children():
 		if Slot.item != null:
-			inventoryItemList.append(Slot.item.name)
+			inventoryItemList.append(Slot.item.itemName)
 	
 	PlayerVariables.body = bodyItemList
 	PlayerVariables.inventory = inventoryItemList

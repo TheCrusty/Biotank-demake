@@ -137,5 +137,6 @@ func activate_items():
 func loadItems():
 	for item in PlayerVariables.body:
 		print(item)
-		var scene = $ItemLoader.getItemScene(item)
-		$ItemGridContainer.add_child(scene)
+		if item != "Empty":
+			var scene = $ItemLoader.getItemScene(item)
+			$ItemGridContainer.add_child(scene)
