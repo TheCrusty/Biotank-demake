@@ -11,7 +11,7 @@ var shooter = null
 func _process(delta):
 	if not exploding:
 		move_and_slide()
-		if is_instance_valid(self) && global_position.distance_to(shooter.global_position) >= distance_existance:
+		if is_instance_valid(shooter) && global_position.distance_to(shooter.global_position) >= distance_existance:
 			queue_free()
 
 func _on_explosion_animation_finished():
