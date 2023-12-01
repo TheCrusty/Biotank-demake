@@ -1,5 +1,7 @@
 name: "godot-build"
 on: push
+  branches:
+      - release
 
 env:
   GODOT_VERSION: 4.0.3
