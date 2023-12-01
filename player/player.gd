@@ -46,7 +46,8 @@ func _ready():
 	#var CameraPivot = get_node("CameraPosition")
 	Camera = owner.get_node("Camera2D")
 	EventBus.enemy_death.connect(_enemy_death_handler)
-	activate_items()
+	#activate_items()
+	loadItems()
 	
 func get_input(delta):
 	if Input.is_action_pressed("Boost") and current_boost_amount > 0:
@@ -132,3 +133,9 @@ func _on_bump_zone_area_entered(area):
 func activate_items():
 	for item in $ItemGridContainer.get_children():
 		item.activate()
+		
+func loadItems():
+	for item in PlayerVariables.body:
+		print(item)
+		var scene = $ItemLoader.getItemScene(item)
+		$ItemGridContainer.add_child(scene)

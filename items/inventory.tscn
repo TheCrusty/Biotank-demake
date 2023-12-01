@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://4kphslfkq7xa"]
+[gd_scene load_steps=6 format=3 uid="uid://4kphslfkq7xa"]
 
 [ext_resource type="Script" path="res://items/inventory.gd" id="1_6fs4q"]
 [ext_resource type="Texture2D" uid="uid://ceprx1ljn4w06" path="res://resources/placeholders/item_slot_default_background.png" id="1_b3w3u"]
 [ext_resource type="Script" path="res://items/Slot.gd" id="2_ocvnb"]
+[ext_resource type="PackedScene" uid="uid://dy064y5w6154k" path="res://items/item_loader.tscn" id="4_j7tfi"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_328t3"]
 texture = ExtResource("1_b3w3u")
@@ -231,3 +232,5 @@ custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_328t3")
 script = ExtResource("2_ocvnb")
+
+[node name="ItemLoader" parent="." instance=ExtResource("4_j7tfi")]
