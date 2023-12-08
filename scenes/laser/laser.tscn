@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://5mbpw6xb86re"]
+
+[ext_resource type="Script" path="res://Scenes/laser/laser.gd" id="1_kjerc"]
+[ext_resource type="Texture2D" uid="uid://d3a0gl7tngyns" path="res://resources/laser.png" id="2_upgei"]
+
+[node name="Laser" type="Node2D"]
+script = ExtResource("1_kjerc")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_upgei")
