@@ -1,10 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://crr4vww20tlsd"]
+[gd_scene load_steps=3 format=3 uid="uid://crr4vww20tlsd"]
 
 [ext_resource type="Script" path="res://scenes/spike/spike.gd" id="1_ukv4g"]
+[ext_resource type="Texture2D" uid="uid://ojsglncfwesi" path="res://scenes/spike/spike.png" id="2_iaabe"]
 
 [node name="spike" type="Node2D"]
 script = ExtResource("1_ukv4g")
 
 [node name="TextureRect" type="TextureRect" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = -12.0
+offset_top = -13.0
+offset_right = 52.0
+offset_bottom = 51.0
+scale = Vector2(0.406534, 0.389588)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("2_iaabe")
