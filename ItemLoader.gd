@@ -3,7 +3,9 @@ extends Node2D
 var items = {
 	"Cannon": preload("res://items/Cannon.tscn"),
 	"Barb": preload("res://items/Barb.tscn"),
-	"Blunderbuss": preload("res://items/Blunderbuss/Blunderbuss.tscn")
+	"Blunderbuss": preload("res://items/Blunderbuss/Blunderbuss.tscn"),
+	"Spike": preload("res://scenes/spike/spike.tscn"),
+	"Laser": preload("res://scenes/laser/laser.tscn")
 }
 
 func getItemScene(name):

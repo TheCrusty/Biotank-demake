@@ -7,7 +7,11 @@
 script = ExtResource("1_23jef")
 
 [node name="TextureRect" type="TextureRect" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 15.0
+offset_top = -15.0
+offset_right = 79.0
+offset_bottom = 49.0
+rotation = 1.5708
+scale = Vector2(0.480589, 0.452493)
 mouse_filter = 2
 texture = ExtResource("2_qy0ye")
