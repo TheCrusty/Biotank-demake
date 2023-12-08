@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dngon46ranmao"
-path="res://.godot/imported/menu_ui.png-498f27ec8334891489ade701fe817e47.ctex"
+path="res://.godot/imported/menu_ui.png-8e78e4c92e07bf44eaafc3967ac0bd15.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://gui/menu_ui.png"
-dest_files=["res://.godot/imported/menu_ui.png-498f27ec8334891489ade701fe817e47.ctex"]
+source_file="res://GUI/menu_ui.png"
+dest_files=["res://.godot/imported/menu_ui.png-8e78e4c92e07bf44eaafc3967ac0bd15.ctex"]
 
 [params]
 

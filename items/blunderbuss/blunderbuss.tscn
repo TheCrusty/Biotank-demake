@@ -9,4 +9,5 @@ script = ExtResource("1_23jef")
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_right = 40.0
 offset_bottom = 40.0
+mouse_filter = 2
 texture = ExtResource("2_qy0ye")
