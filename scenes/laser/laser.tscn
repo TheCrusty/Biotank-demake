@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://5mbpw6xb86re"]
+[gd_scene load_steps=4 format=3 uid="uid://5mbpw6xb86re"]
 
 [ext_resource type="Script" path="res://Scenes/laser/laser.gd" id="1_kjerc"]
 [ext_resource type="Texture2D" uid="uid://d3a0gl7tngyns" path="res://resources/laser.png" id="2_upgei"]
+[ext_resource type="AudioStream" uid="uid://3681khctkjeu" path="res://resources/sounds/Laser_Shoot_1.wav" id="3_rqla7"]
 
 [node name="Laser" type="Node2D"]
 script = ExtResource("1_kjerc")
@@ -15,3 +16,6 @@ rotation = 1.5708
 scale = Vector2(0.436693, 0.483657)
 mouse_filter = 2
 texture = ExtResource("2_upgei")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_rqla7")

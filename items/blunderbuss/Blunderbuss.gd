@@ -10,6 +10,8 @@ func activate():
 	active = true
 
 func shoot():
+	$AudioStreamPlayer2D.play()
+	
 	var projectile_instance = projectile.instantiate()
 	var projectile_instance_left = projectile.instantiate()
 	var projectile_instance_right = projectile.instantiate()

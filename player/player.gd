@@ -77,7 +77,7 @@ func get_input(delta):
 		projectile_instance.shooter = self
 		owner.add_child(projectile_instance)
 		#projectile_instance.onFired($TankTopPivot.global_transform)
-		$audioFire.play()
+		#$audioFire.play()
 		for item in $ItemGridContainer.get_children():
 			if item.has_method("shoot"):
 				item.shoot()
