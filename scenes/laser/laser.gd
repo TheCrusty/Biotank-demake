@@ -6,9 +6,6 @@ var active = false
 var tracksCursor = true
 var projectile = preload("res://levels/projectile.tscn")
 
-func _ready():
-	$TextureRect.texture = load("res://scenes/laser/laser.png")
-
 func activate():
 	active = true
 

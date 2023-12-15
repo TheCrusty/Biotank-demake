@@ -1,21 +1,19 @@
 [gd_scene load_steps=3 format=3 uid="uid://dwnrxr0uk664y"]
 
 [ext_resource type="Script" path="res://items/Cannon.gd" id="1_2xvgk"]
-[ext_resource type="Texture2D" uid="uid://bwjdib3kg30xu" path="res://resources/barb.png" id="2_wkxxc"]
+[ext_resource type="Texture2D" uid="uid://27hx01gxjj8m" path="res://resources/cannon_sprite.png" id="2_6tajo"]
 
 [node name="Cannon" type="Node2D"]
+scale = Vector2(0.8, 0.8)
 script = ExtResource("1_2xvgk")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 anchors_preset = 10
 anchor_right = 1.0
-offset_left = 15.0
-offset_top = -6.0
-offset_right = 27.0
-offset_bottom = 14.0
+offset_right = 12.0
+offset_bottom = 20.0
 grow_horizontal = 2
-rotation = 1.5708
 size_flags_horizontal = 4
 size_flags_vertical = 4
 mouse_filter = 2
-texture = ExtResource("2_wkxxc")
+texture = ExtResource("2_6tajo")

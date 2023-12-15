@@ -6,9 +6,6 @@ var active = false
 var tracksCursor = true
 var projectile = preload("res://levels/projectile.tscn")
 
-func _ready():
-	$TextureRect.texture = load("res://resources/cannon_sprite.png")
-
 func activate():
 	active = true
 

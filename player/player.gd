@@ -139,4 +139,8 @@ func loadItems():
 		print(item)
 		if item != "Empty":
 			var scene = $ItemLoader.getItemScene(item)
+			
+			var sprite = scene.get_node("TextureRect")
+			sprite.set_rotation_degrees(sprite.get_rotation_degrees()+90)
+			
 			$ItemGridContainer.add_child(scene)

@@ -4,10 +4,11 @@
 [ext_resource type="Texture2D" uid="uid://bwjdib3kg30xu" path="res://resources/barb.png" id="2_0wxda"]
 
 [node name="Barb" type="Node2D"]
+scale = Vector2(0.8, 0.8)
 script = ExtResource("1_nh6bb")
 
 [node name="TextureRect" type="TextureRect" parent="."]
-offset_right = 15.0
-offset_bottom = 27.0
+offset_right = 12.0
+offset_bottom = 20.0
 mouse_filter = 2
 texture = ExtResource("2_0wxda")

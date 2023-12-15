@@ -5,17 +5,14 @@
 [ext_resource type="Texture2D" uid="uid://cns1ot4q5wi33" path="res://items/blunderbuss/blunderbuss.png" id="2_qy0ye"]
 
 [node name="Blunderbuss" type="Node2D"]
+scale = Vector2(0.25, 0.25)
 script = ExtResource("1_23jef")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_14qsb")
 
 [node name="TextureRect" type="TextureRect" parent="."]
-offset_left = 15.0
-offset_top = -15.0
-offset_right = 79.0
-offset_bottom = 49.0
-rotation = 1.5708
-scale = Vector2(0.480589, 0.452493)
+offset_right = 64.0
+offset_bottom = 64.0
 mouse_filter = 2
 texture = ExtResource("2_qy0ye")
