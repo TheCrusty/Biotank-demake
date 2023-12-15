@@ -1,6 +1,6 @@
 extends Node2D
 
-var itemName = "Cannon"
+var itemName = "Blunderbuss"
 
 var active = false
 var tracksCursor = true

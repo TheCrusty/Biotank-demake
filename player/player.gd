@@ -76,11 +76,11 @@ func get_input(delta):
 		var projectile_instance = projectile.instantiate()
 		projectile_instance.shooter = self
 		owner.add_child(projectile_instance)
-		#projectile_instance.onFired($TankTopPivot.global_transform)
-		#$audioFire.play()
-		for item in $ItemGridContainer.get_children():
-			if item.has_method("shoot"):
-				item.shoot()
+		for panel in $ItemGridContainer.get_children():
+			var panelChildren = panel.get_children()
+			if panelChildren.size() > 0:
+				if panelChildren[0].has_method("shoot"):
+					panelChildren[0].shoot()
 	else:
 		rotation_direction = Input.get_axis("Rotate_Left", "Rotate_Right")
 		if Input.is_action_pressed("Forward") or Input.is_action_pressed("Reverse"):
@@ -93,10 +93,11 @@ func _physics_process(delta):
 	apply_friction()
 	velocity += acceleration * delta
 	rotation += rotation_direction * rotation_speed * delta
-	#$TankTopPivot.look_at(get_global_mouse_position())
-	for item in $ItemGridContainer.get_children():
-		if item.tracksCursor:
-			item.look_at(get_global_mouse_position())
+	for panel in $ItemGridContainer.get_children():
+		var panelChildren = panel.get_children()
+		if panelChildren.size() > 0:
+			if panelChildren[0].tracksCursor:
+				panelChildren[0].look_at(get_global_mouse_position())
 	move_and_slide()
 
 func apply_friction():
@@ -135,12 +136,16 @@ func activate_items():
 		item.activate()
 		
 func loadItems():
+	var nextPanel = 0
 	for item in PlayerVariables.body:
-		print(item)
 		if item != "Empty":
 			var scene = $ItemLoader.getItemScene(item)
 			
+			# Changing default rotation of sprite.
 			var sprite = scene.get_node("TextureRect")
-			sprite.set_rotation_degrees(sprite.get_rotation_degrees()+90)
+			#sprite.set_rotation_degrees(sprite.get_rotation_degrees()+90)
 			
-			$ItemGridContainer.add_child(scene)
+			# Assign item to the next avaliable panel and increment.
+			var panels = $ItemGridContainer.get_children()
+			panels[nextPanel].add_child(scene)
+			nextPanel+=1
