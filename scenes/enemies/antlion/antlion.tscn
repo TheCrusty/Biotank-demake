@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://bpph7vfgsv7os"]
+
+[ext_resource type="Script" path="res://scenes/enemies/antlion/Antlion.gd" id="1_j8uf6"]
+[ext_resource type="Texture2D" uid="uid://con4kcy6573x0" path="res://scenes/enemies/burrower/sprite.png" id="2_rv2ef"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5jajg"]
+radius = 25.0
+height = 80.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8u6uk"]
+radius = 303.106
+
+[node name="Antlion" type="CharacterBody2D"]
+script = ExtResource("1_j8uf6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_5jajg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_rv2ef")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_8u6uk")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
