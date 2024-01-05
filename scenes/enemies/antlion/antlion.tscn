@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bpph7vfgsv7os"]
 
 [ext_resource type="Script" path="res://scenes/enemies/antlion/Antlion.gd" id="1_j8uf6"]
-[ext_resource type="Texture2D" uid="uid://con4kcy6573x0" path="res://scenes/enemies/burrower/sprite.png" id="2_rv2ef"]
+[ext_resource type="Texture2D" uid="uid://b4j0txsl3noki" path="res://scenes/enemies/antlion/sprite.png" id="2_al3u0"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5jajg"]
 radius = 25.0
@@ -17,7 +17,7 @@ script = ExtResource("1_j8uf6")
 shape = SubResource("CapsuleShape2D_5jajg")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_rv2ef")
+texture = ExtResource("2_al3u0")
 
 [node name="Area2D" type="Area2D" parent="."]
 
