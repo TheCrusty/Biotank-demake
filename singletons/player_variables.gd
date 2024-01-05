@@ -1,5 +1,5 @@
 extends Node
 
 var inventory = []
-var body = ["Laser", "Blunderbuss"]
+var body = ["Blunderbuss"]
 var dnaCount = 0

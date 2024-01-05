@@ -8,7 +8,7 @@ var health = 10
 
 var target
 
-var projectile = preload("res://enemy/enemy_projectile.tscn")
+var projectile = preload("res://scenes/projectiles/spit/enemy_projectile.tscn")
 
 func _process(delta):
 	if active and last_shot > fireRate:

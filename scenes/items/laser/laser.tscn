@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://5mbpw6xb86re"]
+
+[ext_resource type="Script" path="res://scenes/items/laser/laser.gd" id="1_kjerc"]
+[ext_resource type="Texture2D" uid="uid://d3a0gl7tngyns" path="res://resources/laser.png" id="2_upgei"]
+[ext_resource type="AudioStream" uid="uid://3681khctkjeu" path="res://resources/sounds/Laser_Shoot_1.wav" id="3_rqla7"]
+[ext_resource type="Texture2D" uid="uid://brmpvujuy24al" path="res://scenes/items/laser/laser.png" id="4_pb8vh"]
+
+[node name="Laser" type="Node2D"]
+scale = Vector2(0.24, 0.24)
+script = ExtResource("1_kjerc")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 29.1667
+offset_top = -29.1667
+offset_right = 94.1667
+offset_bottom = 28.8333
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 1.5708
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+texture = ExtResource("2_upgei")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_rqla7")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 1.5708
+texture = ExtResource("4_pb8vh")

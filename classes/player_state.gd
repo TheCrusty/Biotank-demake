@@ -18,7 +18,7 @@ func ready():
 	
 func takeDamage(damageAmount):
 	if player.current_health + damageAmount <= 0:
-		get_tree().change_scene_to_file("res://GUI/game_over_menu.tscn")
+		get_tree().change_scene_to_file("res://scenes/gui/game_over_menu.tscn")
 	else:
 		player.current_kill_combo_count -= 1
 		player.current_health -= damageAmount

@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Biotank-demake"
-run/main_scene="res://gui/mission_select.tscn"
+run/main_scene="res://scenes/gui/mission_select.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -19,6 +19,17 @@ config/icon="res://icon.svg"
 
 EventBus="*res://singletons/event_bus.gd"
 PlayerVariables="*res://singletons/player_variables.gd"
+
+[file_customization]
+
+folder_colors={
+"res://enemy/": "red",
+"res://kritas/": "purple",
+"res://levels/": "green",
+"res://resources/": "orange",
+"res://scenes/": "blue",
+"res://scripts/": "yellow"
+}
 
 [input]
 
