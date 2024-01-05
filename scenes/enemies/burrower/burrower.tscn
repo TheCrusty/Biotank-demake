@@ -1,26 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://rovdedg81cs"]
+[gd_scene load_steps=5 format=3 uid="uid://rovdedg81cs"]
 
 [ext_resource type="Script" path="res://scenes/enemies/burrower/burrower.gd" id="1_uln60"]
 [ext_resource type="Texture2D" uid="uid://con4kcy6573x0" path="res://scenes/enemies/burrower/sprite.png" id="1_xuxfa"]
 [ext_resource type="PackedScene" uid="uid://xuc8yv12fuku" path="res://scenes/projectiles/mudball/mudball.tscn" id="3_tv2k7"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_a5y2u"]
-radius = 25.0
-height = 80.0
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_2u068"]
 radius = 296.892
 
-[node name="Burrower" type="CharacterBody2D"]
-collision_layer = 3
-collision_mask = 3
+[node name="Burrower" type="Node2D"]
 script = ExtResource("1_uln60")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CapsuleShape2D_a5y2u")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_xuxfa")
 
 [node name="Area2D" type="Area2D" parent="."]
 
@@ -30,7 +18,9 @@ shape = SubResource("CircleShape2D_2u068")
 [node name="Mudball" parent="." instance=ExtResource("3_tv2k7")]
 visible = false
 
-[node name="TargetFacer" type="Node2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_xuxfa")
+hframes = 3
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
