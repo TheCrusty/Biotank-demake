@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://xuc8yv12fuku"]
+
+[ext_resource type="Script" path="res://scripts/projectile.gd" id="1_ept55"]
+[ext_resource type="Texture2D" uid="uid://jtfumpaigtkg" path="res://scenes/projectiles/mudball/sprite.png" id="2_v1mmi"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wnv7x"]
+radius = 34.0147
+
+[node name="Mudball" type="Node2D"]
+script = ExtResource("1_ept55")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1, 0)
+texture = ExtResource("2_v1mmi")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_wnv7x")

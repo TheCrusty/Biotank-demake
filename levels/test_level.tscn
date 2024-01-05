@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://mkxv4v137fon"]
+[gd_scene load_steps=10 format=3 uid="uid://mkxv4v137fon"]
 
 [ext_resource type="PackedScene" uid="uid://b8y1vgakc4pe8" path="res://player/player.tscn" id="1_r5h3c"]
 [ext_resource type="Texture2D" uid="uid://cw4onu77y7o0x" path="res://resources/background_1.png" id="1_x6me8"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dbjd3834l88vu" path="res://gui/ingame_ui.tscn" id="5_igyyk"]
 [ext_resource type="PackedScene" uid="uid://di6vmryle7epv" path="res://classes/victory_state.tscn" id="5_s5322"]
 [ext_resource type="PackedScene" uid="uid://chg0882dmiih2" path="res://dna.tscn" id="8_cs545"]
+[ext_resource type="PackedScene" uid="uid://rovdedg81cs" path="res://scenes/enemies/burrower/burrower.tscn" id="9_qhlfb"]
 
 [node name="test-level" type="Node2D"]
 metadata/_edit_vertical_guides_ = [-86.0]
@@ -33,28 +34,16 @@ script = ExtResource("4_ca0qm")
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(500, 250)
 
-[node name="Enemy" parent="." instance=ExtResource("2_0r224")]
-position = Vector2(1362, 499)
-
-[node name="Enemy3" parent="." instance=ExtResource("2_0r224")]
-position = Vector2(855, 522)
-
-[node name="Enemy2" parent="." instance=ExtResource("2_0r224")]
-position = Vector2(1076, 323)
-
-[node name="Enemy4" parent="." instance=ExtResource("2_0r224")]
-position = Vector2(1151, 651)
-
-[node name="Enemy5" parent="." instance=ExtResource("2_0r224")]
-position = Vector2(1408, 355)
-
-[node name="Enemy6" parent="." instance=ExtResource("2_0r224")]
-position = Vector2(898, 354)
-
-[node name="projectile_enemy" parent="." instance=ExtResource("3_tpgiq")]
-position = Vector2(890, -87)
-scale = Vector2(1.44, 1.44)
-
 [node name="VictoryState" parent="." instance=ExtResource("5_s5322")]
 
 [node name="DNA" parent="." instance=ExtResource("8_cs545")]
+
+[node name="projectile_enemy" parent="." instance=ExtResource("3_tpgiq")]
+position = Vector2(1563, -258)
+scale = Vector2(1.44, 1.44)
+
+[node name="Enemy" parent="." instance=ExtResource("2_0r224")]
+position = Vector2(631, -441)
+
+[node name="Burrower" parent="." instance=ExtResource("9_qhlfb")]
+position = Vector2(908, 494)

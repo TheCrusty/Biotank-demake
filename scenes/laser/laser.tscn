@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scenes/laser/laser.gd" id="1_kjerc"]
 [ext_resource type="Texture2D" uid="uid://d3a0gl7tngyns" path="res://resources/laser.png" id="2_upgei"]
 [ext_resource type="AudioStream" uid="uid://3681khctkjeu" path="res://resources/sounds/Laser_Shoot_1.wav" id="3_rqla7"]
-[ext_resource type="Texture2D" path="res://Scenes/laser/laser.png" id="4_pb8vh"]
+[ext_resource type="Texture2D" uid="uid://brmpvujuy24al" path="res://Scenes/laser/laser.png" id="4_pb8vh"]
 
 [node name="Laser" type="Node2D"]
 scale = Vector2(0.24, 0.24)
