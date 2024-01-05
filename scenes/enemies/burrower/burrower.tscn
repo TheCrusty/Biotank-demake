@@ -22,5 +22,7 @@ visible = false
 texture = ExtResource("1_xuxfa")
 hframes = 3
 
+[node name="TargetFacer" type="Node2D" parent="."]
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

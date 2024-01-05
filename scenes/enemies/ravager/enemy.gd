@@ -11,7 +11,7 @@ var friction = -2
 var externalForce = Vector2.ZERO
 var seekMovement = Vector2.ZERO
 var target
-var projectile = preload("res://scenes/projectiles/spit/enemy_projectile.tscn")
+var projectile = preload("res://scenes/projectiles/bullet/projectile.tscn")
 var playerInSight = false
 var inAttackRange = false
 var drop = preload("res://scenes/pickups/dna/dna.tscn")

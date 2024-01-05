@@ -4,6 +4,7 @@ extends Node2D
 @export var damage = 50
 
 @onready var collisions = get_node("Area2D")
+var shooter = null
 
 func _ready():
 	collisions.body_entered.connect(handleDamage)

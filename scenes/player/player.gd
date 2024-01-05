@@ -95,7 +95,6 @@ func _physics_process(delta):
 	for panel in $ItemGridContainer.get_children():
 		var panelChildren = panel.get_children()
 		if panelChildren.size() > 0:
-			print(panelChildren[0])
 			if panelChildren[0].tracksCursor:
 				panelChildren[0].look_at(get_global_mouse_position())
 	move_and_slide()
