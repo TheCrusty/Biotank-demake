@@ -23,7 +23,7 @@ func onFired(initialTransform):
 
 func _on_area_2d_body_entered(body):
 	if body.has_method("takeDamage"):
-		body.externalForce = velocity * pushFactor
+		#body.externalForce = velocity * pushFactor
 		body.takeDamage(damage)
 		exploding = true
 		$Sprite2D.visible = false
