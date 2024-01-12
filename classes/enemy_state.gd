@@ -3,6 +3,11 @@ extends State
 
 var enemy: Enemy
 
+@export var deathTransitionState := State
+
+var onDeathTransition = "Death"
+
+
 func _ready():
 	# waits for owner to ready first
 	await owner.ready
@@ -16,7 +21,6 @@ func _ready():
 func ready():
 	pass
 
-
 func update(_delta: float) -> void:
 	enemy.velocity = enemy.externalForce + enemy.seekMovement
 	enemy.applyForces()
@@ -26,7 +30,7 @@ func takeDamage(damageAmount):
 	if enemy.health > 0:
 		enemy.health = enemy.health - damageAmount
 		if(enemy.health <= 0):
-			state_machine.transition_to("Death")
+			state_machine.transition_to(onDeathTransition)
 
 func handle_vision_sphere_area_entered(area):
 	enemy.target = area.owner

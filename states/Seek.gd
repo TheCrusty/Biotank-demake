@@ -1,7 +1,6 @@
 # Seek.gd
 extends EnemyState
 
-
 func update(delta):
 	enemy.seekMovement = Vector2.ZERO
 	enemy.seekMovement = enemy.position.direction_to(enemy.target.position) * enemy.speed 

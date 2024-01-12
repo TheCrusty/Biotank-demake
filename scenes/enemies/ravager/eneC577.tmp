@@ -106,17 +106,19 @@ shape = SubResource("CircleShape2D_gsfdg")
 script = ExtResource("3_spauj")
 initial_state = NodePath("Idle")
 
-[node name="Idle" parent="StateMachine" instance=ExtResource("4_p60gr")]
+[node name="Idle" parent="StateMachine" node_paths=PackedStringArray("visionEnteredState", "deathTransitionState") instance=ExtResource("4_p60gr")]
+visionEnteredState = NodePath(".")
+deathTransitionState = NodePath(".")
 
-[node name="Attack" parent="StateMachine" instance=ExtResource("5_8isvj")]
-attackBodyExitedNode = NodePath("")
-deathTransitionState = NodePath("")
+[node name="Attack" parent="StateMachine" node_paths=PackedStringArray("attackBodyExitedNode", "deathTransitionState") instance=ExtResource("5_8isvj")]
+attackBodyExitedNode = NodePath("../Idle")
+deathTransitionState = NodePath(".")
 
-[node name="Death" parent="StateMachine" instance=ExtResource("6_t2kqc")]
-deathTransitionState = NodePath("")
+[node name="Death" parent="StateMachine" node_paths=PackedStringArray("deathTransitionState") instance=ExtResource("6_t2kqc")]
+deathTransitionState = NodePath(".")
 
-[node name="Seek" parent="StateMachine" instance=ExtResource("7_cardx")]
-deathTransitionState = NodePath("")
+[node name="Seek" parent="StateMachine" node_paths=PackedStringArray("deathTransitionState") instance=ExtResource("7_cardx")]
+deathTransitionState = NodePath("../Death")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

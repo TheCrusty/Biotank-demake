@@ -109,14 +109,10 @@ initial_state = NodePath("Idle")
 [node name="Idle" parent="StateMachine" instance=ExtResource("4_p60gr")]
 
 [node name="Attack" parent="StateMachine" instance=ExtResource("5_8isvj")]
-attackBodyExitedNode = NodePath("")
-deathTransitionState = NodePath("")
 
 [node name="Death" parent="StateMachine" instance=ExtResource("6_t2kqc")]
-deathTransitionState = NodePath("")
 
 [node name="Seek" parent="StateMachine" instance=ExtResource("7_cardx")]
-deathTransitionState = NodePath("")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
