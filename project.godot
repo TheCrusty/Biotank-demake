@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Biotank-demake"
-run/main_scene="res://scenes/gui/mission_select.tscn"
+run/main_scene="res://scenes/gui/MissionSelect/mission_select.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.png"
 

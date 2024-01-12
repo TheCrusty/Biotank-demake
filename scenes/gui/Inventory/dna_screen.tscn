@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://b64ot5gcosgqc"]
 
-[ext_resource type="Script" path="res://GUI/dna_screen.gd" id="1_36lfj"]
-[ext_resource type="PackedScene" uid="uid://4kphslfkq7xa" path="res://items/inventory.tscn" id="2_rh6na"]
+[ext_resource type="Script" path="res://scenes/gui/Inventory/dna_screen.gd" id="1_36lfj"]
+[ext_resource type="PackedScene" uid="uid://4kphslfkq7xa" path="res://scenes/items/inventory.tscn" id="2_rh6na"]
 
 [node name="DNAScreen" type="Control"]
 layout_mode = 3

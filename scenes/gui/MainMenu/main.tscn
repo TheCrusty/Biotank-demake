@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://duo8sqtx55khb"]
 
-[ext_resource type="Script" path="res://gui/main_menu.gd" id="1_q66a4"]
+[ext_resource type="Script" path="res://scenes/gui/MainMenu/main_menu.gd" id="1_q66a4"]
 [ext_resource type="Texture2D" uid="uid://c4xwygo1tlmb0" path="res://resources/Desert2.jpg" id="2_ued12"]
 
 [node name="main_menu" type="Node2D"]

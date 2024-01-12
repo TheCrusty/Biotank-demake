@@ -1,6 +1,6 @@
 extends Node2D
 
-var simultaneous_scene = preload("res://levels/test_level.tscn").instantiate()
+var simultaneous_scene = preload("res://levels/level_1/test_level.tscn").instantiate()
 
 func _on_play_button_pressed():
 	queue_free()

@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://b8y1vgakc4pe8" path="res://scenes/player/player.tscn" id="1_3lml8"]
 [ext_resource type="Texture2D" uid="uid://l0wxncapshg0" path="res://resources/background_2.png" id="1_va33v"]
-[ext_resource type="PackedScene" uid="uid://dbjd3834l88vu" path="res://scenes/gui/ingame_ui.tscn" id="3_lntyy"]
+[ext_resource type="PackedScene" uid="uid://dbjd3834l88vu" path="res://scenes/gui/GameOverlay/ingame_ui.tscn" id="3_lntyy"]
 [ext_resource type="PackedScene" uid="uid://ddiq7lliqxm0u" path="res://scenes/enemies/flinger/projectile_enemy.tscn" id="4_7y6b2"]
 [ext_resource type="Script" path="res://levels/CameraPosition.gd" id="4_dwlll"]
 [ext_resource type="PackedScene" uid="uid://dyyxfp7qicuri" path="res://scenes/enemies/ravager/enemy.tscn" id="5_l6cse"]

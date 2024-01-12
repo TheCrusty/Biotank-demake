@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cv0peeyber1q4"]
 
-[ext_resource type="Script" path="res://scenes/gui/mission_select.gd" id="1_1fnte"]
+[ext_resource type="Script" path="res://scenes/gui/MissionSelect/mission_select.gd" id="1_1fnte"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_sosxs"]
 

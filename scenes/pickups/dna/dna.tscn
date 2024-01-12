@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://chg0882dmiih2"]
 
 [ext_resource type="Texture2D" uid="uid://rlhu224s4oyf" path="res://resources/DNA.png" id="1_4db2v"]
-[ext_resource type="Script" path="res://dna.gd" id="1_fj5ed"]
+[ext_resource type="Script" path="res://scenes/pickups/dna/dna.gd" id="1_fj5ed"]
 [ext_resource type="AudioStream" uid="uid://brfeac5hjwsc2" path="res://resources/sounds/powerUp.wav" id="3_t11ol"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ic6vl"]
